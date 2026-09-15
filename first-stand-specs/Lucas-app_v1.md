@@ -46,4 +46,3 @@ Se decide tener en cuenta está función por el hecho de que mantener un vehícu
 * Una vez terminada la configuración inicial de los gastos, el sistema debe mostrar un mensaje indicando lo siguiente en un modal: (Tipo de vehículo, Fecha, Modelo, Fecha SOAT, Fecha Tecno, Fecha kit de carretera opcional).
 * El titulo del modal debe ser: Páseme los datos del maquinón.
 * La fecha no debe ser futura a la del día que se está realizando el registro.
-
