@@ -1,6 +1,6 @@
 # Lucas-app\_v1
 
-1. ## Login.
+## 1. Login.
 
 Inicialmente se puede realizar el registro de usuarios ingresando el correo:
 
@@ -17,9 +17,7 @@ Inicialmente se puede realizar el registro de usuarios ingresando el correo:
 
 * Una vez terminado el registro, se debe mostrar un modal informando que se realizo el registro exitosamente, y debe llegar al correo del usuario el mensaje de registro exitoso.
 
-## 
-
-2. ## Personalizable.
+## 2. Personalizable.
 
 El usuario podrá seleccionar las siguientes opciones:
 
@@ -39,10 +37,34 @@ El usuario podrá seleccionar las siguientes opciones:
 * Estos gastos deben tener la misma lógica de adición y eliminación que los otros gatos.
 * También se debe agregar la fecha para recordar los pagos.
 
-3. ## Gastos vehiculares
+## 3. Gastos vehiculares
 
 Se decide tener en cuenta está función por el hecho de que mantener un vehículo es algo complejo. Inicialmente, cuando el usuario indique que tiene vehículo y luego de terminar de escoger los gastos obligatorios y no obligatorios el sistema deme mostrar lo siguiente:
 
 * Una vez terminada la configuración inicial de los gastos, el sistema debe mostrar un mensaje indicando lo siguiente en un modal: (Tipo de vehículo, Fecha, Modelo, Fecha SOAT, Fecha Tecno, Fecha kit de carretera opcional).
 * El titulo del modal debe ser: Páseme los datos del maquinón.
 * La fecha no debe ser futura a la del día que se está realizando el registro.
+
+## 4. Presupuesto compartido
+
+* La app debe permitir registrar los ingresos de los usuarios.
+* El usuario puede invitar al otro usuario con el correo electrónico registrado.
+* La app debe mostrar una notificación cuando has sido invitado a un presupuesto compartido.
+* En el prosupuesto compartido los dos usuarios pueden agregar o quitar gastos, ingresos adicionales o registros de lo que han gastado.
+* La app debe permitir que los usuarios determinen su presupuesto del mes.
+
+## 5. Metricas
+
+* La app debe poder permitir filtrar los gatos por mes.
+* La app debe permitir filtrar los gatos por tipo de gasto EJ: cuanto en gas, cuando en agua.
+* la app debe poder filtrar por fecha.
+* La app debe poder permitir filtrar los gatos de la otra persona de presupuesto compartido o familiar.
+* Una vez selecciona un filtro de 5 meses con un tipo de gasto, el sistema debe realizar las sumas inminediatamente y mostrar el total del gasto durante ese tiempo.
+
+## 6. Funcionalidad de prestamos a terceros
+
+Esta parte tiene como objetivo mostrar los gatos que se tienen con los prestamos a prestamistas ya que tienen un interes elevado. La idea es registrar mes a mes cuando es el prestamos + el interes.
+
+* La app al momento de agregar un gasto, si la persona ingresa prestamo debe preguntar: banco o persona
+* Si es banco solo dejará ingresar el valor de la cuota sin más detalle.
+* Si es persona, la app debe preguntar cuanto de capita y cuanto de interes y cuantas cuaotas de plazo tiene para pagar el crédito.

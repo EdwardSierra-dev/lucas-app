@@ -70,3 +70,19 @@ lucas/
 ├── server/               # Node.js API Backend (Express/NestJS)
 ├── docs/                 # Documentation and architecture diagrams
 └── README.md             # Main repository documentation
+
+---
+
+## ?? UI Color Palette
+
+Lucas uses a **pastel color palette** designed to feel modern, friendly, and low-stress � perfect for a home finance app.
+
+| Role | Color Name | Hex | Preview |
+| :--- | :--- | :--- | :--- |
+| **Primary / CTA Buttons** | Soft Lavender | `#B8A9E3` | ?? |
+| **Secondary / Panel Backgrounds** | Mint Green | `#A8D8C2` | ?? |
+| **Accent / Alerts & Highlights** | Peach | `#F2B8A0` | ?? |
+| **Neutral Background** | Cloud White | `#F7F5FF` | ? |
+| **Text & Borders** | Slate Gray | `#6B7280` | ? |
+
+> These colors are applied consistently across all screens on both Android and Web platforms.
