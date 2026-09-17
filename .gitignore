@@ -1,0 +1,101 @@
+# ─── Dependencies ────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# ─── Build outputs ────────────────────────────────────────────────────────────
+dist/
+build/
+out/
+*.tsbuildinfo
+.tsbuildinfo
+
+# ─── Expo / React Native ──────────────────────────────────────────────────────
+.expo/
+.expo-shared/
+expo-env.d.ts
+android/
+ios/
+*.apk
+*.aab
+*.ipa
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+*.metro-health-check*
+
+# ─── NestJS / Node ────────────────────────────────────────────────────────────
+*.js.map
+*.d.ts.map
+
+# ─── Environment & secrets ───────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.cert
+
+# ─── Logs ─────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ─── Test & coverage ──────────────────────────────────────────────────────────
+coverage/
+.nyc_output/
+junit.xml
+test-results/
+playwright-report/
+playwright/.cache/
+
+# ─── Supabase ─────────────────────────────────────────────────────────────────
+supabase/.branches/
+supabase/.temp/
+
+# ─── IDE ──────────────────────────────────────────────────────────────────────
+.vscode/
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.iml
+*.iws
+*.ipr
+.project
+.classpath
+
+# ─── OS ───────────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ─── Misc ─────────────────────────────────────────────────────────────────────
+*.tgz
+*.zip
+.turbo/
+.cache/
+tmp/
+temp/

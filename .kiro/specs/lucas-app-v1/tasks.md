@@ -8,49 +8,49 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ## Tasks
 
-- [ ] 1. Project scaffolding and monorepo setup
-  - [ ] 1.1 Initialize monorepo workspace with npm/yarn workspaces and create `apps/client/`, `server/`, `packages/types/`, and `docs/` directories
+- [x] 1. Project scaffolding and monorepo setup
+  - [x] 1.1 Initialize monorepo workspace with npm/yarn workspaces and create `apps/client/`, `server/`, `packages/types/`, and `docs/` directories
     - Configure `package.json` at the root with `workspaces` pointing to `apps/client`, `server`, and `packages/types`
     - Add `.gitignore`, `.editorconfig`, and root `tsconfig.base.json`
     - _Requirements: all (foundational)_
 
-  - [ ] 1.2 Bootstrap the NestJS backend in `server/`
+  - [x] 1.2 Bootstrap the NestJS backend in `server/`
     - Run `nest new server` (or manual scaffold) with TypeScript strict mode
     - Install and configure: `@nestjs/config`, `@nestjs/typeorm`, `typeorm`, `pg`, `class-validator`, `class-transformer`, `@nestjs/jwt`, `@nestjs/passport`, `passport`, `passport-jwt`, `@nestjs/schedule`, `fast-check` (dev), `jest` (dev), `supertest` (dev)
     - Create `server/.env.example` with `DATABASE_URL`, `JWT_SECRET`, `JWT_REFRESH_SECRET`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SMTP_*` placeholders
     - Configure `TypeOrmModule.forRootAsync` using environment variables
     - _Requirements: all backend (foundational)_
 
-  - [ ] 1.3 Bootstrap the Expo client in `apps/client/`
+  - [x] 1.3 Bootstrap the Expo client in `apps/client/`
     - Initialize with `npx create-expo-app` (SDK 51+) and enable React Native Web via `@expo/webpack-config` or Metro
     - Install: `expo-router`, `zustand`, `@tanstack/react-query`, `axios`, `zod`, `react-native-testing-library` (dev), `jest` (dev), `fast-check` (dev)
     - Set up `app/_layout.tsx` as the root layout with Expo Router
     - _Requirements: all frontend (foundational)_
 
-  - [ ] 1.4 Configure Supabase local dev environment
+  - [x] 1.4 Configure Supabase local dev environment
     - Add `supabase/config.toml` and seed files; document `supabase start` in README
     - Add `supabase/migrations/` directory for future migration files
     - _Requirements: all database (foundational)_
 
-  - [ ] 1.5 Create `packages/types/` shared package
+  - [x] 1.5 Create `packages/types/` shared package
     - Define `LoanSource`, `NotificationType`, `ExpenseType`, shared interfaces (`Category`, `Loan`, `MoneyAmount`), and pure utility functions: `loanTotalRepayment`, `loanRemainingInstallments`, `loanOutstandingAmount`
     - Configure `packages/types/tsconfig.json` and export from `packages/types/src/index.ts`
     - _Requirements: 7.5, 7.9_
 
-  - [ ]* 1.6 Verify monorepo wiring — checkpoint
+  - [x] 1.6 Verify monorepo wiring — checkpoint
     - Ensure all packages resolve; run `tsc --noEmit` across all workspaces
     - _Requirements: all (foundational)_
 
 ---
 
 - [ ] 2. Theme constants, UI primitives, and shared components
-  - [ ] 2.1 Create `apps/client/constants/theme.ts` with the full color palette and touch target constants
+  - [x] 2.1 Create `apps/client/constants/theme.ts` with the full color palette and touch target constants
     - Export `Colors` object: `primary: '#B8A9E3'`, `secondary: '#A8D8C2'`, `accent: '#F2B8A0'`, `background: '#F7F5FF'`, `text: '#6B7280'`
     - Export `TouchTarget = { minWidth: 44, minHeight: 44 }`
     - Export typography scale (H1 24sp, H2 18sp, Body 14sp, Caption 12sp, CTA Button 16sp)
     - _Requirements: 8.1, 8.2, 8.3_
 
-  - [ ] 2.2 Implement core UI primitives in `apps/client/components/ui/`
+  - [x] 2.2 Implement core UI primitives in `apps/client/components/ui/`
     - `Button.tsx` — primary/secondary variants, enforces `44×44` minimum touch target, uses `colors.primary` background for CTA
     - `Input.tsx` — accessible label + `accessibilityLabel`, inline error display with Peach border on error, `accessibilityDescribedBy` wiring
     - `Modal.tsx` — standard and skippable variants; skippable renders "Omitir" button top-right with `44×44` min target
@@ -60,16 +60,16 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `CategoryCard.tsx` — selection toggle, optional delete action (custom categories), optional payment date assignment
     - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5_
 
-  - [ ] 2.3 Implement `formatMoney` utility in `apps/client/constants/theme.ts` (or `apps/client/utils/money.ts`)
+  - [x] 2.3 Implement `formatMoney` utility in `apps/client/constants/theme.ts` (or `apps/client/utils/money.ts`)
     - `formatMoney(amount: number, currency?: string): string` using `Intl.NumberFormat('es-CO', { style: 'currency', minimumFractionDigits: 2, maximumFractionDigits: 2 })`
     - _Requirements: 8.3_
 
-  - [ ]* 2.4 Write property test for `formatMoney` — P21
+  - [ ] 2.4 Write property test for `formatMoney` — P21
     - **Property 21: Monetary formatting always produces two decimal places**
     - **Validates: Requirements 8.3**
     - Use `fc.float({ noNaN: true, noDefaultInfinity: true })` as arbitrary
 
-  - [ ]* 2.5 Write unit tests for Modal skippable variant — P22
+  - [ ] 2.5 Write unit tests for Modal skippable variant — P22
     - **Property 22: Skippable modal renders Omitir button meeting touch target**
     - **Validates: Requirements 8.5**
     - Use React Native Testing Library to assert "Omitir" element and style dimensions
@@ -77,7 +77,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 3. Authentication — backend
-  - [ ] 3.1 Create the `users` database migration and `User` TypeORM entity
+  - [x] 3.1 Create the `users` database migration and `User` TypeORM entity
     - Columns: `id` UUID PK, `email` VARCHAR(254) UNIQUE, `password_hash`, `display_name`, `currency` DEFAULT 'COP', `vehicle_owner` BOOLEAN, `email_verified` BOOLEAN, `onboarding_done` BOOLEAN, `created_at`, `updated_at`
     - _Requirements: 1.1 – 1.10_
 
@@ -97,12 +97,12 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Return 409 if email already registered
     - _Requirements: 1.3, 1.4, 1.9_
 
-  - [ ]* 3.4 Write property-based test for email validator — P1
+  - [ ] 3.4 Write property-based test for email validator — P1
     - **Property 1: Email validation accepts valid and rejects invalid addresses**
     - **Validates: Requirements 1.1, 1.2**
     - Test both the client-side Zod schema and server-side `@IsEmail()` guard
 
-  - [ ]* 3.5 Write property-based test for password validator — P2 and P3
+  - [ ] 3.5 Write property-based test for password validator — P2 and P3
     - **Property 2: Password validator enforces all criteria and reports unmet ones**
     - **Property 3: Password confirmation match**
     - **Validates: Requirements 1.3, 1.4, 1.6**
@@ -133,7 +133,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Axios instance with `Authorization: Bearer` interceptor and refresh-on-401 logic
     - _Requirements: 1, design auth section_
 
-  - [ ]* 4.4 Write unit tests for RegistrationForm
+  - [ ] 4.4 Write unit tests for RegistrationForm
     - Test: success modal shown after registration; 409 shows inline email error; 500 preserves form values; password mismatch error; each password criterion error listed individually
     - _Requirements: 1.2, 1.4, 1.7, 1.9, 1.10_
 
@@ -157,7 +157,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `CreateCategoryDto` with `@Length(1,40)`, `@IsNotEmpty()` on both name and emoji
     - _Requirements: 2.3 – 2.7, 3.2 – 3.4_
 
-  - [ ]* 6.3 Write property-based tests for custom category validation — P4, P5, P6
+  - [ ] 6.3 Write property-based tests for custom category validation — P4, P5, P6
     - **Property 4: Valid custom category addition**
     - **Property 5: Invalid custom category is rejected**
     - **Property 6: Duplicate category name rejection (case-insensitive)**
@@ -179,7 +179,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Validate `payment_day` is 1–28; return 400 with field error otherwise
     - _Requirements: 2.7, 2.8, 3.4, 3.5_
 
-  - [ ]* 7.3 Write property-based test for payment day validation — P7
+  - [ ] 7.3 Write property-based test for payment day validation — P7
     - **Property 7: Payment day validation accepts 1–28, rejects all others**
     - **Validates: Requirements 2.8, 3.5**
     - Use `fc.integer({ min: -100, max: 200 })`
@@ -207,7 +207,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Hooks: `useCategories`, `useConfigureExpense`, `useUpdatePaymentDay`, `useDeleteExpenseSlot`
     - _Requirements: 2, 3_
 
-  - [ ]* 7.7 Write unit tests for expense configurator screens
+  - [ ] 7.7 Write unit tests for expense configurator screens
     - Test: 8 predefined mandatory categories rendered; "+" button opens form; duplicate name shows error; custom category added to list; deselect removes from active list; 3 predefined optional categories rendered; max-20 custom limit enforced
     - _Requirements: 2.2, 2.4, 2.5, 2.6, 2.7, 3.2, 3.3_
 
@@ -230,7 +230,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - On successful save: dismiss modal signal (Req 4.7)
     - _Requirements: 4.2 – 4.7_
 
-  - [ ]* 9.3 Write property-based tests for vehicle date validations — P8, P9
+  - [ ] 9.3 Write property-based tests for vehicle date validations — P8, P9
     - **Property 8: Vehicle purchase date cannot be in the future**
     - **Property 9: Vehicle expiry date must be after purchase date**
     - **Validates: Requirements 4.5, 4.6**
@@ -245,7 +245,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - On success: save record, dismiss modal, advance navigation (Req 4.7)
     - _Requirements: 4.1 – 4.7, 8.1, 8.2_
 
-  - [ ]* 9.5 Write unit tests for VehicleForm
+  - [ ] 9.5 Write unit tests for VehicleForm
     - Test: required field errors on empty submit; purchase date > today rejected; expiry date < purchase date rejected; kit date field absent from validation errors when empty; successful submission dismisses modal
     - _Requirements: 4.3 – 4.7_
 
@@ -263,7 +263,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `DELETE /expenses/records/:id` — delete record; only owner can delete
     - _Requirements: 5.6, 5.7, 5.8, 5.9_
 
-  - [ ]* 10.3 Write property-based test for financial entry validation — P11
+  - [ ] 10.3 Write property-based test for financial entry validation — P11
     - **Property 11: Financial entry amount and description validation**
     - **Validates: Requirements 5.1, 5.6, 5.7, 5.8**
     - Use `fc.float()` and `fc.string()` arbitraries spanning valid and invalid ranges
@@ -299,7 +299,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `PATCH /shared-budgets/:id/limit` — validate `SetLimitDto`: `@Min(0.01) @Max(999_999_999.99)` (Req 5.10, 5.11)
     - _Requirements: 5.6 – 5.12_
 
-  - [ ]* 11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14
+  - [ ] 11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14
     - **Property 11: Financial entry amount and description validation** (shared budget variant)
     - **Property 12: Expense removal recalculates budget total exactly**
     - **Property 13: Monthly budget limit validation**
@@ -323,7 +323,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Hooks: `useSharedBudget`, `useInviteUser`, `useAcceptInvitation`, `useAddBudgetExpense`, `useRemoveBudgetExpense`, `useAddBudgetIncome`, `useSetBudgetLimit`
     - _Requirements: 5.4, 5.5_
 
-  - [ ]* 12.3 Write unit tests for shared budget UI
+  - [ ] 12.3 Write unit tests for shared budget UI
     - Test: invitation error shown for unknown email; expense form rejects amount=0; limit form rejects limit=0; expense list updates after delete
     - _Requirements: 5.3, 5.8, 5.11_
 
@@ -342,7 +342,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Return `totalSum: 0` and empty records array when no matches (Req 6.8)
     - _Requirements: 6.1 – 6.8_
 
-  - [ ]* 14.2 Write property-based tests for metrics — P15, P16, P17
+  - [ ] 14.2 Write property-based tests for metrics — P15, P16, P17
     - **Property 15: Metrics filter returns only matching records**
     - **Property 16: Metrics total sum equals sum of matching records**
     - **Property 17: Metrics rejects date range where start exceeds end**
@@ -371,7 +371,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Returns `{ totalSum, records, isLoading, isError }`
     - _Requirements: 6.5_
 
-  - [ ]* 15.4 Write unit tests for metrics screen
+  - [ ] 15.4 Write unit tests for metrics screen
     - Test: date range error shown without clearing results; zero-result state displayed; correct total sum rendered for given records
     - _Requirements: 6.7, 6.8_
 
@@ -390,7 +390,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `DELETE /loans/:id` — delete loan record
     - _Requirements: 7.1 – 7.9_
 
-  - [ ]* 16.3 Write property-based tests for loan validation and computation — P18, P19, P20
+  - [ ] 16.3 Write property-based tests for loan validation and computation — P18, P19, P20
     - **Property 18: Loan input validation (bank and person)**
     - **Property 19: Person loan total repayment computation = capital + (interest × installments)**
     - **Property 20: Active loan remaining and outstanding amount computation**
@@ -405,7 +405,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - All amounts rendered via `MoneyInput` / `formatMoney` (Req 8.3)
     - _Requirements: 7.1 – 7.9, 8.1, 8.2, 8.3_
 
-  - [ ]* 16.5 Write unit tests for LoanForm
+  - [ ] 16.5 Write unit tests for LoanForm
     - Test: bank path shows only cuota field; person path shows 3 fields; cuota=0 shows error; capital=0 shows error; interest<0 shows error; installments=0 shows error; total repayment formula displayed correctly
     - _Requirements: 7.1 – 7.8_
 
@@ -445,12 +445,12 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `@Cron('0 0 1 * *')` — reset `limit_notified = false` on all `shared_budgets` at start of each month
     - _Requirements: 5.12, design error handling section_
 
-  - [ ]* 18.6 Write property-based test for vehicle expiry notification window — P10
+  - [ ] 18.6 Write property-based test for vehicle expiry notification window — P10
     - **Property 10: Vehicle document expiry notification window (0–30 days)**
     - **Validates: Requirements 4.8, 4.9, 4.10**
     - Use `fc.date()` arbitraries; assert notification dispatched iff days-to-expiry ∈ [0, 30]
 
-  - [ ]* 18.7 Write unit tests for notification scheduler
+  - [ ] 18.7 Write unit tests for notification scheduler
     - Test: payment reminder job dispatches for payment_day = today and tomorrow; vehicle expiry dispatches for T+29, not T+31; budget limit notification created exactly once when expenses cross limit; in-app notification inserted within budget invite path
     - _Requirements: 2.9, 3.6, 4.8 – 4.10, 5.4, 5.12_
 
@@ -468,7 +468,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Display in-app alert for `budget_invitation` type notifications within 30 s (Req 5.4)
     - _Requirements: 5.4_
 
-  - [ ]* 19.3 Write unit tests for notification frontend integration
+  - [ ] 19.3 Write unit tests for notification frontend integration
     - Test: NotificationBadge count increments on new in-app notification; budget limit alert banner shows when limit exceeded; push token registration called on startup
     - _Requirements: 5.4, 5.12_
 
@@ -479,24 +479,24 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 21. API integration tests (Supertest + local Supabase)
-  - [ ]* 21.1 Write integration test for full registration flow
+  - [ ] 21.1 Write integration test for full registration flow
     - `POST /auth/register` success → assert 201, user in DB, email job queued
     - `POST /auth/register` with existing email → assert 409 with conflict message
     - _Requirements: 1.7, 1.8, 1.9_
 
-  - [ ]* 21.2 Write integration test for shared budget invitation and acceptance flow
+  - [ ] 21.2 Write integration test for shared budget invitation and acceptance flow
     - Create budget → invite by email → accept invitation → assert both members can write expenses and incomes
     - _Requirements: 5.2 – 5.5_
 
-  - [ ]* 21.3 Write integration test for budget limit notification fires exactly once
+  - [ ] 21.3 Write integration test for budget limit notification fires exactly once
     - Seed shared budget with limit L; add expenses summing to > L; assert `notifications` has exactly one budget_limit record for that month cycle; add more expenses; assert still exactly one record
     - _Requirements: 5.12_
 
-  - [ ]* 21.4 Write integration test for vehicle expiry scheduler
+  - [ ] 21.4 Write integration test for vehicle expiry scheduler
     - Seed vehicles with `soat_expiry = today + 29 days` and `soat_expiry = today + 31 days`; run scheduler manually; assert notification created for T+29 only
     - _Requirements: 4.8_
 
-  - [ ]* 21.5 Write integration test for metrics endpoint correctness
+  - [ ] 21.5 Write integration test for metrics endpoint correctness
     - Seed expense records spanning multiple months and categories; call `POST /metrics/expenses` with various filter combinations; assert `totalSum` equals arithmetic sum of returned records
     - _Requirements: 6.5, 6.6_
 
@@ -515,13 +515,13 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Use palette colors and `44×44` touch targets throughout (Req 8.1, 8.2)
     - _Requirements: 8.1, 8.2, 8.4_
 
-  - [ ]* 22.3 Write Playwright E2E tests for Web (critical flows)
+  - [ ] 22.3 Write Playwright E2E tests for Web (critical flows)
     - Test: registration → onboarding → dashboard navigation renders correctly
     - Test: add expense → metrics filter shows correct total
     - Test: shared budget invite → accept → both members see the same budget
     - _Requirements: 1, 5, 6_
 
-  - [ ]* 22.4 Write Detox E2E test for Android (smoke tests)
+  - [ ] 22.4 Write Detox E2E test for Android (smoke tests)
     - Test: app launch → registration screen rendered; login flow; notification permission prompt
     - _Requirements: 8.4_
 

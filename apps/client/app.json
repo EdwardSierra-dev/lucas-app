@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "Lucas",
+    "slug": "lucas-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "lucasapp",
+    "userInterfaceStyle": "light",
+    "platforms": ["android", "web"],
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#F7F5FF"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#F7F5FF"
+      },
+      "package": "com.lucasapp.finance"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#B8A9E3"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

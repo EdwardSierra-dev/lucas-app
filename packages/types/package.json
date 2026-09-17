@@ -1,0 +1,43 @@
+{
+  "name": "@lucas/types",
+  "version": "1.0.0",
+  "description": "Shared TypeScript types and pure utilities for the Lucas app",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "development": "./src/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "typecheck": "tsc --noEmit --project tsconfig.json",
+    "test": "jest --runInBand",
+    "test:coverage": "jest --runInBand --coverage"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.5",
+    "typescript": "^5.4.5"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "testMatch": [
+      "**/__tests__/**/*.test.ts"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "./tsconfig.json"
+      }
+    }
+  }
+}

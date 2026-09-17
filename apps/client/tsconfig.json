@@ -1,0 +1,23 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2020"],
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./components/*"],
+      "@store/*": ["./store/*"],
+      "@services/*": ["./services/*"],
+      "@constants/*": ["./constants/*"],
+      "@lucas/types": ["../../packages/types/src/index.ts"]
+    },
+    "strict": true,
+    "noEmit": true,
+    "incremental": false,
+    "composite": false
+  },
+  "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.d.ts", "expo-env.d.ts"],
+  "exclude": ["node_modules", "dist", "build"]
+}
