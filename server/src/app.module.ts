@@ -6,6 +6,11 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { MailModule } from './mail/mail.module';
+import { LoansModule } from './loans/loans.module';
+import { SharedBudgetsModule } from './shared-budgets/shared-budgets.module';
+import { VehiclesModule } from './vehicles/vehicles.module';
+import { ExpensesModule } from './expenses/expenses.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -27,6 +32,11 @@ import { MailModule } from './mail/mail.module';
     UsersModule,
     MailModule,
     AuthModule,
+    CategoriesModule,
+    ExpensesModule,
+    VehiclesModule,
+    SharedBudgetsModule,
+    LoansModule,
   ],
   controllers: [AppController],
   providers: [AppService],

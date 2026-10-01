@@ -150,7 +150,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Seed predefined categories: Agua, Luz, Gas, Arriendo, Comida, Internet, Colegio, Transporte (mandatory); Netflix, Spotify, Amazon Prime (optional)
     - _Requirements: 2.2, 3.2_
 
-  - [~] 6.2 Implement `CategoriesModule` with controller and service
+  - [x] 6.2 Implement `CategoriesModule` with controller and service
     - `GET /categories?type=mandatory|optional` — returns predefined + user's custom categories
     - `POST /categories` — create custom category; validate name 1–40 chars, non-empty emoji, reject duplicate name case-insensitively (`LOWER(name)` check), enforce 20-category max for optional (Req 3.3)
     - `DELETE /categories/:id` — only owner can delete custom; predefined categories cannot be deleted
@@ -171,7 +171,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Unique constraint `(user_id, category_id)`
     - _Requirements: 2.8, 3.5_
 
-  - [~] 7.2 Implement `ExpensesModule` — user expense slots endpoints
+  - [x] 7.2 Implement `ExpensesModule` — user expense slots endpoints
     - `GET /expenses` — list configured expense slots for authenticated user
     - `POST /expenses` — configure slot (category_id + optional payment_day 1–28)
     - `PATCH /expenses/:id` — update payment_day
@@ -223,7 +223,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Columns: `id`, `user_id` UNIQUE, `vehicle_type`, `model`, `purchase_date` DATE, `soat_expiry` DATE, `tecnomecanica_expiry` DATE, `kit_expiry` DATE (nullable), `created_at`, `updated_at`
     - _Requirements: 4.1 – 4.10_
 
-  - [~] 9.2 Implement `VehiclesModule` with controller and service
+  - [x] 9.2 Implement `VehiclesModule` with controller and service
     - `GET /vehicles/me` — get authenticated user's vehicle record
     - `POST /vehicles` — register vehicle; validate all required fields present (Req 4.2, 4.3); reject `purchase_date` > today (Req 4.5); reject expiry date < purchase_date (Req 4.6); `kit_expiry` is optional (Req 4.4)
     - `PATCH /vehicles/me` — update vehicle data with same validations
@@ -284,7 +284,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `budget_incomes`: `id`, `budget_id`, `user_id`, `amount`, `description`, `income_date`
     - _Requirements: 5.1 – 5.12_
 
-  - [~] 11.2 Implement `SharedBudgetsModule` — core endpoints
+  - [x] 11.2 Implement `SharedBudgetsModule` — core endpoints
     - `POST /shared-budgets` — create shared budget
     - `GET /shared-budgets/me` — get budget the authenticated user belongs to
     - `POST /shared-budgets/:id/invite` — invite user by email; reject if email not found with error message (Req 5.3); immediately insert in-app notification (Req 5.4)
@@ -383,7 +383,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `CONSTRAINT bank_loan_fields`, `CONSTRAINT person_loan_fields` as defined in design
     - _Requirements: 7.1 – 7.9_
 
-  - [~] 16.2 Implement `LoansModule` — endpoints
+  - [x] 16.2 Implement `LoansModule` — endpoints
     - `GET /loans` — list active loans where `installments_paid < total_installments`; compute and return `remainingInstallments` and `outstandingAmount` using shared utilities (Req 7.9)
     - `POST /loans` — create loan; validate by source type: bank requires `cuota > 0` (Req 7.3); person requires `capital > 0`, `interest_per_installment ≥ 0`, `total_installments > 0` (Req 7.6, 7.7, 7.8); compute and return `totalRepayment` before confirmation (Req 7.5)
     - `PATCH /loans/:id/installment` — increment `installments_paid`

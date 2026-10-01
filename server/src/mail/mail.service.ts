@@ -22,4 +22,19 @@ export class MailService {
       `[MAIL] To: ${to} | Subject: Confirma tu cuenta Lucas | Verify link: ${verifyUrl}`,
     );
   }
+
+  /**
+   * Notify a user that they have been invited to a shared budget
+   * (Requirement 5.2 / 5.4). Logs the message in this stub implementation.
+   */
+  async sendBudgetInvitation(
+    to: string,
+    budgetName: string,
+    invitationId: string,
+  ): Promise<void> {
+    const acceptUrl = `/api/v1/invitations/${invitationId}/accept`;
+    this.logger.log(
+      `[MAIL] To: ${to} | Subject: Te invitaron al presupuesto "${budgetName}" | Accept link: ${acceptUrl}`,
+    );
+  }
 }
