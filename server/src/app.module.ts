@@ -12,6 +12,7 @@ import { VehiclesModule } from './vehicles/vehicles.module';
 import { ExpensesModule } from './expenses/expenses.module';
 import { CategoriesModule } from './categories/categories.module';
 import { MetricsModule } from './metrics/metrics.module';
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
   imports: [
@@ -39,6 +40,7 @@ import { MetricsModule } from './metrics/metrics.module';
     SharedBudgetsModule,
     LoansModule,
     MetricsModule,
+    NotificationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

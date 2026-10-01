@@ -202,7 +202,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Payment date input per selected category (1–28) (Req 3.5)
     - _Requirements: 3.1 – 3.5, 8.1, 8.2, 8.5_
 
-  - [~] 7.6 Implement `expenseStore.ts` (Zustand) and `expensesApi.ts` (React Query)
+  - [x] 7.6 Implement `expenseStore.ts` (Zustand) and `expensesApi.ts` (React Query)
     - Store: selected categories map, custom categories list
     - Hooks: `useCategories`, `useConfigureExpense`, `useUpdatePaymentDay`, `useDeleteExpenseSlot`
     - _Requirements: 2, 3_
@@ -236,7 +236,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - **Validates: Requirements 4.5, 4.6**
     - Use `fc.date()` arbitraries filtered to future and past/future pairs
 
-  - [~] 9.4 Implement vehicle registration screen `apps/client/app/(onboarding)/vehicle-registration.tsx` and `VehicleForm.tsx`
+  - [x] 9.4 Implement vehicle registration screen `apps/client/app/(onboarding)/vehicle-registration.tsx` and `VehicleForm.tsx`
     - Conditionally rendered only when `vehicle_owner = true` (Req 2.11)
     - Modal title: "Páseme los datos del maquinón" (Req 4.1)
     - Required fields: vehicle type, model, purchase/registration date, SOAT expiry, Tecnomecánica expiry (Req 4.2)
@@ -276,7 +276,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 11. Shared budget module — backend
+- [x] 11. Shared budget module — backend
   - [x] 11.1 Create `shared_budgets`, `budget_members`, `budget_invitations`, `budget_incomes` database migrations and TypeORM entities
     - `shared_budgets`: `id`, `name`, `monthly_limit` NUMERIC(14,2), `limit_notified` BOOLEAN DEFAULT false, timestamps
     - `budget_members`: composite PK `(budget_id, user_id)`, `role`, `joined_at`
@@ -299,7 +299,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `PATCH /shared-budgets/:id/limit` — validate `SetLimitDto`: `@Min(0.01) @Max(999_999_999.99)` (Req 5.10, 5.11)
     - _Requirements: 5.6 – 5.12_
 
-  - [~] 11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14
+  - [x] 11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14
     - **Property 11: Financial entry amount and description validation** (shared budget variant)
     - **Property 12: Expense removal recalculates budget total exactly**
     - **Property 13: Monthly budget limit validation**
@@ -317,7 +317,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Display current total expenses vs monthly limit with Peach accent alert when limit exceeded
     - _Requirements: 5.1 – 5.12, 8.1, 8.2, 8.3_
 
-  - [~] 12.2 Implement `budgetStore.ts` (Zustand) and `sharedBudgetApi.ts` (React Query)
+  - [x] 12.2 Implement `budgetStore.ts` (Zustand) and `sharedBudgetApi.ts` (React Query)
     - Store: budget state, members list, expenses list, incomes list, limit
     - Subscribe to Supabase Realtime channel for `notifications` INSERT events to receive budget invitations ≤ 30 s (Req 5.4)
     - Hooks: `useSharedBudget`, `useInviteUser`, `useAcceptInvitation`, `useAddBudgetExpense`, `useRemoveBudgetExpense`, `useAddBudgetIncome`, `useSetBudgetLimit`
@@ -422,7 +422,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Index: `(user_id, read, created_at DESC)`
     - _Requirements: 2.9, 3.6, 4.8, 4.9, 4.10, 5.4, 5.12_
 
-  - [~] 18.2 Implement `NotificationsModule` with `NotificationsService`
+  - [x] 18.2 Implement `NotificationsModule` with `NotificationsService`
     - `createNotification(userId, type, payload, channel)` — insert into `notifications` table
     - `GET /notifications` — list unread notifications for authenticated user
     - `PATCH /notifications/:id/read` — mark as read
