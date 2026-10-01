@@ -184,7 +184,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - **Validates: Requirements 2.8, 3.5**
     - Use `fc.integer({ min: -100, max: 200 })`
 
-  - [~] 7.4 Implement mandatory expenses onboarding screen `apps/client/app/(onboarding)/mandatory-expenses.tsx`
+  - [x] 7.4 Implement mandatory expenses onboarding screen `apps/client/app/(onboarding)/mandatory-expenses.tsx`
     - On entry: show skippable modal with message "Estos gastos mensuales son aquellos que no puedes dejar de pagar o sino pailas papi 💪🏻"; dismiss closes modal and shows list (Req 2.1)
     - Render multi-select list of predefined mandatory categories using `CategoryCard` components (Req 2.2)
     - "+" button opens `ExpenseCategoryForm.tsx` — name input (1–30 chars for mandatory), `EmojiPicker`, submit adds to list (Req 2.3, 2.4)
@@ -194,7 +194,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Vehicle ownership Yes/No question at bottom; "Yes" triggers Vehicle_Module activation (`PATCH /users/me` → `vehicle_owner = true`) (Req 2.10, 2.11)
     - _Requirements: 2.1 – 2.11, 8.1, 8.2, 8.5_
 
-  - [~] 7.5 Implement non-mandatory expenses onboarding screen `apps/client/app/(onboarding)/optional-expenses.tsx`
+  - [x] 7.5 Implement non-mandatory expenses onboarding screen `apps/client/app/(onboarding)/optional-expenses.tsx`
     - On entry: show skippable modal with message "Estos gastos son aquellos que quieres pero no los necesitas 😎 alguien tenía que decírtelo" and "Omitir" button (Req 3.1)
     - Render multi-select list with Netflix, Spotify, Amazon Prime predefined categories (Req 3.2)
     - "+" button allows adding custom optional category (name 1–40 chars, emoji), max 20 custom categories (Req 3.3)
@@ -309,7 +309,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 12. Shared budget — frontend
-  - [~] 12.1 Implement shared budget screen `apps/client/app/(tabs)/shared-budget.tsx` and related forms
+  - [x] 12.1 Implement shared budget screen `apps/client/app/(tabs)/shared-budget.tsx` and related forms
     - `BudgetLimitForm.tsx` — `MoneyInput` for monthly limit, validation error on invalid amount
     - Income entry form — amount + description fields with validation
     - Expense entry form — amount + description fields with validation
@@ -352,7 +352,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 15. Metrics — frontend
-  - [~] 15.1 Implement metrics screen `apps/client/app/(tabs)/metrics.tsx`
+  - [x] 15.1 Implement metrics screen `apps/client/app/(tabs)/metrics.tsx`
     - Month selector (up to 5 calendar months) — chips/toggle UI using `colors.primary`
     - Category dropdown filter
     - Date range picker (start + end); show error "rango de fechas inválido" if start > end without clearing results (Req 6.7)
@@ -397,7 +397,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - **Validates: Requirements 7.3, 7.5, 7.6, 7.7, 7.8, 7.9**
     - Use `fc.tuple(fc.float(...), fc.float(...), fc.integer(...))` as per design test strategy
 
-  - [~] 16.4 Implement loans screen `apps/client/app/(tabs)/loans.tsx` and `LoanForm.tsx`
+  - [x] 16.4 Implement loans screen `apps/client/app/(tabs)/loans.tsx` and `LoanForm.tsx`
     - When user selects "Préstamo" as expense category, show two-option prompt: "Banco" or "Persona" (Req 7.1)
     - Bank path: show only `cuota` input; validation error if ≤ 0 (Req 7.2, 7.3)
     - Person path: show capital, interest per installment, total installments fields; compute and display total repayment `C + I × N` before confirmation (Req 7.4, 7.5); validation errors per field (Req 7.6 – 7.8)
