@@ -50,7 +50,18 @@ export interface PasswordValidationResult {
  * the result with a list of unmet-criterion messages. Suitable for direct use
  * in tests and for use by the class-validator constraint.
  */
-export function validatePassword(password: string): PasswordValidationResult {
+export function validatePassword(
+  password: unknown,
+): PasswordValidationResult {
+  // Null-safe: anything that is not a string fails validation outright
+  // instead of throwing when a criterion accesses string members.
+  if (typeof password !== 'string') {
+    return {
+      valid: false,
+      errors: ['Password must be a string'],
+    };
+  }
+
   const errors: string[] = [];
 
   for (const criterion of CRITERIA) {

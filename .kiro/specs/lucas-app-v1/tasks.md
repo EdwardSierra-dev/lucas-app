@@ -76,7 +76,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 3. Authentication — backend
+- [x] 3. Authentication — backend
   - [x] 3.1 Create the `users` database migration and `User` TypeORM entity
     - Columns: `id` UUID PK, `email` VARCHAR(254) UNIQUE, `password_hash`, `display_name`, `currency` DEFAULT 'COP', `vehicle_owner` BOOLEAN, `email_verified` BOOLEAN, `onboarding_done` BOOLEAN, `created_at`, `updated_at`
     - _Requirements: 1.1 – 1.10_
@@ -97,12 +97,12 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Return 409 if email already registered
     - _Requirements: 1.3, 1.4, 1.9_
 
-  - [~] 3.4 Write property-based test for email validator — P1
+  - [x] 3.4 Write property-based test for email validator — P1
     - **Property 1: Email validation accepts valid and rejects invalid addresses**
     - **Validates: Requirements 1.1, 1.2**
     - Test both the client-side Zod schema and server-side `@IsEmail()` guard
 
-  - [~] 3.5 Write property-based test for password validator — P2 and P3
+  - [x] 3.5 Write property-based test for password validator — P2 and P3
     - **Property 2: Password validator enforces all criteria and reports unmet ones**
     - **Property 3: Password confirmation match**
     - **Validates: Requirements 1.3, 1.4, 1.6**
@@ -145,7 +145,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 6. Categories module — backend
-  - [~] 6.1 Create `categories` database migration and `Category` TypeORM entity
+  - [x] 6.1 Create `categories` database migration and `Category` TypeORM entity
     - Columns per schema: `id`, `user_id` (nullable for predefined), `name` VARCHAR(40), `emoji` VARCHAR(10), `type` enum, `is_predefined`, `created_at`
     - Seed predefined categories: Agua, Luz, Gas, Arriendo, Comida, Internet, Colegio, Transporte (mandatory); Netflix, Spotify, Amazon Prime (optional)
     - _Requirements: 2.2, 3.2_
@@ -166,7 +166,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 7. Onboarding flow — mandatory and non-mandatory expenses
-  - [~] 7.1 Create `user_expenses` database migration and `UserExpense` TypeORM entity
+  - [x] 7.1 Create `user_expenses` database migration and `UserExpense` TypeORM entity
     - Columns: `id`, `user_id`, `category_id`, `payment_day` SMALLINT CHECK 1–28, `is_active`, `created_at`, `updated_at`
     - Unique constraint `(user_id, category_id)`
     - _Requirements: 2.8, 3.5_
@@ -219,7 +219,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 9. Vehicle module — backend and frontend
-  - [~] 9.1 Create `vehicles` database migration and `Vehicle` TypeORM entity
+  - [x] 9.1 Create `vehicles` database migration and `Vehicle` TypeORM entity
     - Columns: `id`, `user_id` UNIQUE, `vehicle_type`, `model`, `purchase_date` DATE, `soat_expiry` DATE, `tecnomecanica_expiry` DATE, `kit_expiry` DATE (nullable), `created_at`, `updated_at`
     - _Requirements: 4.1 – 4.10_
 

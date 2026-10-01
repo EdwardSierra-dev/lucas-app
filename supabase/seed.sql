@@ -16,29 +16,29 @@
 -- Seeded once; do NOT duplicate on subsequent resets (use ON CONFLICT DO NOTHING).
 -- -----------------------------------------------------------------------------
 
--- INSERT INTO categories (id, user_id, name, emoji, type, is_predefined)
--- VALUES
---   (gen_random_uuid(), NULL, 'Agua',       '💧', 'mandatory', true),
---   (gen_random_uuid(), NULL, 'Luz',        '💡', 'mandatory', true),
---   (gen_random_uuid(), NULL, 'Gas',        '🔥', 'mandatory', true),
---   (gen_random_uuid(), NULL, 'Arriendo',   '🏠', 'mandatory', true),
---   (gen_random_uuid(), NULL, 'Comida',     '🍔', 'mandatory', true),
---   (gen_random_uuid(), NULL, 'Internet',   '🌐', 'mandatory', true),
---   (gen_random_uuid(), NULL, 'Colegio',    '🎒', 'mandatory', true),
---   (gen_random_uuid(), NULL, 'Transporte', '🚌', 'mandatory', true)
--- ON CONFLICT DO NOTHING;
+INSERT INTO categories (user_id, name, emoji, type, is_predefined)
+VALUES
+  (NULL, 'Agua',       '💧', 'mandatory', true),
+  (NULL, 'Luz',        '💡', 'mandatory', true),
+  (NULL, 'Gas',        '🔥', 'mandatory', true),
+  (NULL, 'Arriendo',   '🏠', 'mandatory', true),
+  (NULL, 'Comida',     '🍔', 'mandatory', true),
+  (NULL, 'Internet',   '🌐', 'mandatory', true),
+  (NULL, 'Colegio',    '🎒', 'mandatory', true),
+  (NULL, 'Transporte', '🚌', 'mandatory', true)
+ON CONFLICT DO NOTHING;
 
 
 -- -----------------------------------------------------------------------------
 -- Predefined Categories — Optional
 -- -----------------------------------------------------------------------------
 
--- INSERT INTO categories (id, user_id, name, emoji, type, is_predefined)
--- VALUES
---   (gen_random_uuid(), NULL, 'Netflix',      '🎬', 'optional', true),
---   (gen_random_uuid(), NULL, 'Spotify',      '🎵', 'optional', true),
---   (gen_random_uuid(), NULL, 'Amazon Prime', '📦', 'optional', true)
--- ON CONFLICT DO NOTHING;
+INSERT INTO categories (user_id, name, emoji, type, is_predefined)
+VALUES
+  (NULL, 'Netflix',      '🎬', 'optional', true),
+  (NULL, 'Spotify',      '🎵', 'optional', true),
+  (NULL, 'Amazon Prime', '📦', 'optional', true)
+ON CONFLICT DO NOTHING;
 
 
 -- -----------------------------------------------------------------------------
