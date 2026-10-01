@@ -35,6 +35,10 @@
     "16.3 Write property-based tests for loan validation and computation — P18, P19, P20": {
       "status": "passed",
       "lastRunTimestamp": 1790825739066
+    },
+    "18.6 Write property-based test for vehicle expiry notification window — P10": {
+      "status": "passed",
+      "lastRunTimestamp": 1790827750570
     }
   },
   "executionHistory": {
@@ -1186,6 +1190,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823411577
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827675377
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827883916
       }
     ],
     "16.1 Create `loans` database migration and `Loan` TypeORM entity": [
@@ -1430,6 +1444,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823413147
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827676774
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827879501
       }
     ],
     "18.7 Write unit tests for notification scheduler": [
@@ -1442,6 +1466,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823413268
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827677721
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827880456
       }
     ],
     "19.1 Register push notification token via Expo Notifications": [
@@ -1454,6 +1488,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823413383
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827678666
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827882870
       }
     ],
     "19.2 Wire Supabase Realtime in-app notification listener": [
@@ -1466,6 +1510,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823413495
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827679655
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827883305
       }
     ],
     "19.3 Write unit tests for notification frontend integration": [
@@ -1694,6 +1748,20 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790827646049
+      }
+    ],
+    "18. Notification system — backend scheduler and event triggers": [
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827880521
+      }
+    ],
+    "15. Metrics — frontend": [
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827883991
       }
     ]
   }

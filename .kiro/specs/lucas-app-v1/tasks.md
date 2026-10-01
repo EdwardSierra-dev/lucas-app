@@ -351,7 +351,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 15. Metrics — frontend
+- [x] 15. Metrics — frontend
   - [x] 15.1 Implement metrics screen `apps/client/app/(tabs)/metrics.tsx`
     - Month selector (up to 5 calendar months) — chips/toggle UI using `colors.primary`
     - Category dropdown filter
@@ -371,7 +371,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Returns `{ totalSum, records, isLoading, isError }`
     - _Requirements: 6.5_
 
-  - [~] 15.4 Write unit tests for metrics screen
+  - [x] 15.4 Write unit tests for metrics screen
     - Test: date range error shown without clearing results; zero-result state displayed; correct total sum rendered for given records
     - _Requirements: 6.7, 6.8_
 
@@ -416,7 +416,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 18. Notification system — backend scheduler and event triggers
+- [x] 18. Notification system — backend scheduler and event triggers
   - [x] 18.1 Create `notifications` database migration and `Notification` TypeORM entity
     - Columns: `id`, `user_id`, `type` VARCHAR(50), `payload` JSONB, `channel` VARCHAR(20) CHECK ('in_app','push','email'), `read` BOOLEAN, `sent_at`, `created_at`
     - Index: `(user_id, read, created_at DESC)`
@@ -445,24 +445,24 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `@Cron('0 0 1 * *')` — reset `limit_notified = false` on all `shared_budgets` at start of each month
     - _Requirements: 5.12, design error handling section_
 
-  - [~] 18.6 Write property-based test for vehicle expiry notification window — P10
+  - [x] 18.6 Write property-based test for vehicle expiry notification window — P10
     - **Property 10: Vehicle document expiry notification window (0–30 days)**
     - **Validates: Requirements 4.8, 4.9, 4.10**
     - Use `fc.date()` arbitraries; assert notification dispatched iff days-to-expiry ∈ [0, 30]
 
-  - [~] 18.7 Write unit tests for notification scheduler
+  - [x] 18.7 Write unit tests for notification scheduler
     - Test: payment reminder job dispatches for payment_day = today and tomorrow; vehicle expiry dispatches for T+29, not T+31; budget limit notification created exactly once when expenses cross limit; in-app notification inserted within budget invite path
     - _Requirements: 2.9, 3.6, 4.8 – 4.10, 5.4, 5.12_
 
 ---
 
 - [ ] 19. Notification system — frontend
-  - [~] 19.1 Register push notification token via Expo Notifications
+  - [x] 19.1 Register push notification token via Expo Notifications
     - On app startup, call `Notifications.getExpoPushTokenAsync()` and persist token to `PATCH /users/me` (or dedicated endpoint)
     - Request permissions with user-friendly prompt
     - _Requirements: 2.9, 3.6, 4.8 – 4.10_
 
-  - [~] 19.2 Wire Supabase Realtime in-app notification listener
+  - [x] 19.2 Wire Supabase Realtime in-app notification listener
     - Subscribe to Supabase Realtime channel for authenticated user's `notifications` table INSERT events
     - On new notification: update `NotificationBadge` count in `budgetStore` / dedicated notification slice
     - Display in-app alert for `budget_invitation` type notifications within 30 s (Req 5.4)
