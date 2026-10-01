@@ -478,25 +478,25 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 21. API integration tests (Supertest + local Supabase)
-  - [ ] 21.1 Write integration test for full registration flow
+- [x] 21. API integration tests (Supertest + local Supabase)
+  - [x] 21.1 Write integration test for full registration flow
     - `POST /auth/register` success → assert 201, user in DB, email job queued
     - `POST /auth/register` with existing email → assert 409 with conflict message
     - _Requirements: 1.7, 1.8, 1.9_
 
-  - [ ] 21.2 Write integration test for shared budget invitation and acceptance flow
+  - [x] 21.2 Write integration test for shared budget invitation and acceptance flow
     - Create budget → invite by email → accept invitation → assert both members can write expenses and incomes
     - _Requirements: 5.2 – 5.5_
 
-  - [ ] 21.3 Write integration test for budget limit notification fires exactly once
+  - [x] 21.3 Write integration test for budget limit notification fires exactly once
     - Seed shared budget with limit L; add expenses summing to > L; assert `notifications` has exactly one budget_limit record for that month cycle; add more expenses; assert still exactly one record
     - _Requirements: 5.12_
 
-  - [ ] 21.4 Write integration test for vehicle expiry scheduler
+  - [x] 21.4 Write integration test for vehicle expiry scheduler
     - Seed vehicles with `soat_expiry = today + 29 days` and `soat_expiry = today + 31 days`; run scheduler manually; assert notification created for T+29 only
     - _Requirements: 4.8_
 
-  - [ ] 21.5 Write integration test for metrics endpoint correctness
+  - [x] 21.5 Write integration test for metrics endpoint correctness
     - Seed expense records spanning multiple months and categories; call `POST /metrics/expenses` with various filter combinations; assert `totalSum` equals arithmetic sum of returned records
     - _Requirements: 6.5, 6.6_
 

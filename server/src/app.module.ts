@@ -25,12 +25,29 @@ import { NotificationsModule } from './notifications/notifications.module';
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
-      useFactory: (config: ConfigService) => ({
-        type: 'postgres' as const,
-        url: config.get<string>('DATABASE_URL'),
-        autoLoadEntities: true,
-        synchronize: false, // use migrations in production
-      }),
+      useFactory: (config: ConfigService) => {
+        const url = config.get<string>('DATABASE_URL') ?? '';
+        // Managed Postgres (Supabase, Neon, RDS, etc.) requires SSL. Enable it
+        // when DB_SSL=true, or auto-detect common cloud hosts / sslmode=require.
+        const sslFlag = config.get<string>('DB_SSL');
+        const looksCloud =
+          /supabase\.(co|com)|neon\.tech|render\.com|amazonaws\.com|sslmode=require/i.test(
+            url,
+          );
+        const useSsl =
+          sslFlag === 'true' || (sslFlag !== 'false' && looksCloud);
+        // Schema bootstrap: when DB_SYNCHRONIZE=true, TypeORM creates/updates the
+        // schema from the entities on boot (used for MVP/dev bring-up without the
+        // Supabase CLI). Keep it false in production and rely on migrations.
+        const synchronize = config.get<string>('DB_SYNCHRONIZE') === 'true';
+        return {
+          type: 'postgres' as const,
+          url,
+          autoLoadEntities: true,
+          synchronize,
+          ...(useSsl ? { ssl: { rejectUnauthorized: false } } : {}),
+        };
+      },
     }),
     // Enables @Cron scheduled jobs (payment reminders, vehicle expiry, monthly resets).
     ScheduleModule.forRoot(),

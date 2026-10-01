@@ -55,6 +55,7 @@ export class AuthService {
     const user = await this.usersService.create({
       email: dto.email,
       passwordHash,
+      ...(dto.displayName ? { displayName: dto.displayName } : {}),
     });
 
     const verifyToken = this.signEmailVerifyToken(user);

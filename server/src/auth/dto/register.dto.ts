@@ -1,4 +1,4 @@
-import { IsEmail } from 'class-validator';
+import { IsEmail, IsOptional, IsString, MaxLength } from 'class-validator';
 import { IsStrongPassword } from '../validators/password.validator';
 
 /**
@@ -24,4 +24,14 @@ export class RegisterDto {
 
   @IsStrongPassword()
   password: string;
+
+  /**
+   * Optional display name (maps to users.display_name VARCHAR(100)). The
+   * registration form may send it; when omitted the account is created
+   * without a display name.
+   */
+  @IsOptional()
+  @IsString()
+  @MaxLength(100)
+  displayName?: string;
 }

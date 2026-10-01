@@ -1571,6 +1571,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790828154496
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874165770
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874171174
       }
     ],
     "21.2 Write integration test for shared budget invitation and acceptance flow": [
@@ -1588,6 +1598,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790828155425
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874175303
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874179408
       }
     ],
     "21.3 Write integration test for budget limit notification fires exactly once": [
@@ -1605,6 +1625,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790828156873
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874183289
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874187282
       }
     ],
     "21.4 Write integration test for vehicle expiry scheduler": [
@@ -1622,6 +1652,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790828157771
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874192980
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874196800
       }
     ],
     "21.5 Write integration test for metrics endpoint correctness": [
@@ -1639,6 +1679,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790828158626
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874200790
+      },
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874204647
       }
     ],
     "22.1 Wire all onboarding navigation in `apps/client/app/_layout.tsx`": [
@@ -1824,6 +1874,13 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790828136552
+      }
+    ],
+    "21. API integration tests (Supertest + local Supabase)": [
+      {
+        "executionId": "b42f502f-6fea-4769-bd10-77e4bed76b71",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790874204688
       }
     ]
   }
