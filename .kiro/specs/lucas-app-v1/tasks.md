@@ -308,7 +308,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 12. Shared budget — frontend
+- [x] 12. Shared budget — frontend
   - [x] 12.1 Implement shared budget screen `apps/client/app/(tabs)/shared-budget.tsx` and related forms
     - `BudgetLimitForm.tsx` — `MoneyInput` for monthly limit, validation error on invalid amount
     - Income entry form — amount + description fields with validation
@@ -323,7 +323,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Hooks: `useSharedBudget`, `useInviteUser`, `useAcceptInvitation`, `useAddBudgetExpense`, `useRemoveBudgetExpense`, `useAddBudgetIncome`, `useSetBudgetLimit`
     - _Requirements: 5.4, 5.5_
 
-  - [~] 12.3 Write unit tests for shared budget UI
+  - [x] 12.3 Write unit tests for shared budget UI
     - Test: invitation error shown for unknown email; expense form rejects amount=0; limit form rejects limit=0; expense list updates after delete
     - _Requirements: 5.3, 5.8, 5.11_
 
@@ -367,7 +367,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Wire charts to metrics response data
     - _Requirements: 6.6, 8.1_
 
-  - [~] 15.3 Implement `metricsApi.ts` React Query hook `useMetrics(filter: MetricsQueryDto)`
+  - [x] 15.3 Implement `metricsApi.ts` React Query hook `useMetrics(filter: MetricsQueryDto)`
     - Returns `{ totalSum, records, isLoading, isError }`
     - _Requirements: 6.5_
 
@@ -435,13 +435,13 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - One-day-away reminder for mandatory expenses (Req 2.9)
     - _Requirements: 2.9, 3.6_
 
-  - [~] 18.4 Implement vehicle document expiry reminder job
+  - [x] 18.4 Implement vehicle document expiry reminder job
     - `@Cron('0 8 * * *')` — `sendVehicleExpiryReminders()`: query vehicles where `soat_expiry`, `tecnomecanica_expiry`, or `kit_expiry` is within 30 calendar days of today
     - Dispatch one notification per expiring document per user identifying the document (Req 4.8, 4.9, 4.10)
     - No notification if expiry > 30 days away or already past
     - _Requirements: 4.8, 4.9, 4.10_
 
-  - [~] 18.5 Implement monthly cron job to reset `limit_notified`
+  - [x] 18.5 Implement monthly cron job to reset `limit_notified`
     - `@Cron('0 0 1 * *')` — reset `limit_notified = false` on all `shared_budgets` at start of each month
     - _Requirements: 5.12, design error handling section_
 

@@ -1042,6 +1042,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823410767
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827398201
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827645969
       }
     ],
     "13. Checkpoint — shared budget complete": [
@@ -1154,6 +1164,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823411470
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827399104
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827413246
       }
     ],
     "15.4 Write unit tests for metrics screen": [
@@ -1366,6 +1386,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823412849
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827395872
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827647919
       }
     ],
     "18.5 Implement monthly cron job to reset `limit_notified`": [
@@ -1378,6 +1408,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823413004
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827396759
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827647325
       }
     ],
     "18.6 Write property-based test for vehicle expiry notification window — P10": [
@@ -1647,6 +1687,13 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790827246684
+      }
+    ],
+    "12. Shared budget — frontend": [
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790827646049
       }
     ]
   }
