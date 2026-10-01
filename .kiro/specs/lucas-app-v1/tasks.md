@@ -211,7 +211,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Test: 8 predefined mandatory categories rendered; "+" button opens form; duplicate name shows error; custom category added to list; deselect removes from active list; 3 predefined optional categories rendered; max-20 custom limit enforced
     - _Requirements: 2.2, 2.4, 2.5, 2.6, 2.7, 3.2, 3.3_
 
-- [~] 8. Checkpoint — onboarding categories complete
+- [ ] 8. Checkpoint — onboarding categories complete
   - Run `npx jest --runInBand --testPathPattern=categories|expenses` in server
   - Run `npx jest --runInBand --testPathPattern=mandatory|optional` in apps/client
   - Ask user if any adjustments are needed before proceeding.
@@ -327,7 +327,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Test: invitation error shown for unknown email; expense form rejects amount=0; limit form rejects limit=0; expense list updates after delete
     - _Requirements: 5.3, 5.8, 5.11_
 
-- [~] 13. Checkpoint — shared budget complete
+- [ ] 13. Checkpoint — shared budget complete
   - Run `npx jest --runInBand --testPathPattern=shared-budget` in server and apps/client
   - Ask user if any adjustments are needed before proceeding.
 
@@ -409,7 +409,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Test: bank path shows only cuota field; person path shows 3 fields; cuota=0 shows error; capital=0 shows error; interest<0 shows error; installments=0 shows error; total repayment formula displayed correctly
     - _Requirements: 7.1 – 7.8_
 
-- [~] 17. Checkpoint — domain modules complete
+- [ ] 17. Checkpoint — domain modules complete
   - Run full backend test suite: `cd server && npx jest --runInBand`
   - Run full frontend test suite: `cd apps/client && npx jest --runInBand`
   - Ask user if any adjustments are needed before proceeding to notifications.
@@ -472,31 +472,31 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Test: NotificationBadge count increments on new in-app notification; budget limit alert banner shows when limit exceeded; push token registration called on startup
     - _Requirements: 5.4, 5.12_
 
-- [~] 20. Checkpoint — notifications complete
+- [ ] 20. Checkpoint — notifications complete
   - Run full backend test suite including scheduler tests
   - Ask user if any adjustments are needed before final integration tests.
 
 ---
 
 - [ ] 21. API integration tests (Supertest + local Supabase)
-  - [~] 21.1 Write integration test for full registration flow
+  - [ ] 21.1 Write integration test for full registration flow
     - `POST /auth/register` success → assert 201, user in DB, email job queued
     - `POST /auth/register` with existing email → assert 409 with conflict message
     - _Requirements: 1.7, 1.8, 1.9_
 
-  - [~] 21.2 Write integration test for shared budget invitation and acceptance flow
+  - [ ] 21.2 Write integration test for shared budget invitation and acceptance flow
     - Create budget → invite by email → accept invitation → assert both members can write expenses and incomes
     - _Requirements: 5.2 – 5.5_
 
-  - [~] 21.3 Write integration test for budget limit notification fires exactly once
+  - [ ] 21.3 Write integration test for budget limit notification fires exactly once
     - Seed shared budget with limit L; add expenses summing to > L; assert `notifications` has exactly one budget_limit record for that month cycle; add more expenses; assert still exactly one record
     - _Requirements: 5.12_
 
-  - [~] 21.4 Write integration test for vehicle expiry scheduler
+  - [ ] 21.4 Write integration test for vehicle expiry scheduler
     - Seed vehicles with `soat_expiry = today + 29 days` and `soat_expiry = today + 31 days`; run scheduler manually; assert notification created for T+29 only
     - _Requirements: 4.8_
 
-  - [~] 21.5 Write integration test for metrics endpoint correctness
+  - [ ] 21.5 Write integration test for metrics endpoint correctness
     - Seed expense records spanning multiple months and categories; call `POST /metrics/expenses` with various filter combinations; assert `totalSum` equals arithmetic sum of returned records
     - _Requirements: 6.5, 6.6_
 
@@ -515,17 +515,17 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Use palette colors and `44×44` touch targets throughout (Req 8.1, 8.2)
     - _Requirements: 8.1, 8.2, 8.4_
 
-  - [~] 22.3 Write Playwright E2E tests for Web (critical flows)
+  - [ ] 22.3 Write Playwright E2E tests for Web (critical flows)
     - Test: registration → onboarding → dashboard navigation renders correctly
     - Test: add expense → metrics filter shows correct total
     - Test: shared budget invite → accept → both members see the same budget
     - _Requirements: 1, 5, 6_
 
-  - [~] 22.4 Write Detox E2E test for Android (smoke tests)
+  - [ ] 22.4 Write Detox E2E test for Android (smoke tests)
     - Test: app launch → registration screen rendered; login flow; notification permission prompt
     - _Requirements: 8.4_
 
-- [~] 23. Final checkpoint — all tests pass
+- [ ] 23. Final checkpoint — all tests pass
   - Run `cd server && npx jest --runInBand` (unit + property + integration)
   - Run `cd apps/client && npx jest --runInBand` (unit + component + property)
   - Run `cd e2e && npx playwright test` (Web E2E)
