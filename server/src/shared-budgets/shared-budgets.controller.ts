@@ -6,6 +6,7 @@ import {
   HttpStatus,
   Param,
   ParseUUIDPipe,
+  Patch,
   Post,
   Req,
   UseGuards,
@@ -13,6 +14,9 @@ import {
 import { SharedBudgetsService } from './shared-budgets.service';
 import { CreateBudgetDto } from './dto/create-budget.dto';
 import { InviteMemberDto } from './dto/invite-member.dto';
+import { AddIncomeDto } from './dto/add-income.dto';
+import { AddBudgetExpenseDto } from './dto/add-budget-expense.dto';
+import { SetLimitDto } from './dto/set-limit.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { JwtPayload } from '../auth/interfaces/jwt-payload.interface';
 
@@ -60,6 +64,51 @@ export class SharedBudgetsController {
     @Body() dto: InviteMemberDto,
   ) {
     return this.budgetsService.inviteMember(req.user.sub, budgetId, dto);
+  }
+
+  @Post('budgets/:id/incomes')
+  @HttpCode(HttpStatus.CREATED)
+  addIncome(
+    @Req() req: AuthenticatedRequest,
+    @Param('id', ParseUUIDPipe) budgetId: string,
+    @Body() dto: AddIncomeDto,
+  ) {
+    return this.budgetsService.addIncome(req.user.sub, budgetId, dto);
+  }
+
+  @Get('budgets/:id/incomes')
+  listIncomes(
+    @Req() req: AuthenticatedRequest,
+    @Param('id', ParseUUIDPipe) budgetId: string,
+  ) {
+    return this.budgetsService.listIncomes(req.user.sub, budgetId);
+  }
+
+  @Post('budgets/:id/expenses')
+  @HttpCode(HttpStatus.CREATED)
+  addExpense(
+    @Req() req: AuthenticatedRequest,
+    @Param('id', ParseUUIDPipe) budgetId: string,
+    @Body() dto: AddBudgetExpenseDto,
+  ) {
+    return this.budgetsService.addExpense(req.user.sub, budgetId, dto);
+  }
+
+  @Get('budgets/:id/expenses')
+  listExpenses(
+    @Req() req: AuthenticatedRequest,
+    @Param('id', ParseUUIDPipe) budgetId: string,
+  ) {
+    return this.budgetsService.listExpenses(req.user.sub, budgetId);
+  }
+
+  @Patch('budgets/:id/limit')
+  setLimit(
+    @Req() req: AuthenticatedRequest,
+    @Param('id', ParseUUIDPipe) budgetId: string,
+    @Body() dto: SetLimitDto,
+  ) {
+    return this.budgetsService.setLimit(req.user.sub, budgetId, dto);
   }
 
   @Post('invitations/:id/accept')

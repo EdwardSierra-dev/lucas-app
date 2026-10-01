@@ -144,7 +144,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 6. Categories module — backend
+- [x] 6. Categories module — backend
   - [x] 6.1 Create `categories` database migration and `Category` TypeORM entity
     - Columns per schema: `id`, `user_id` (nullable for predefined), `name` VARCHAR(40), `emoji` VARCHAR(10), `type` enum, `is_predefined`, `created_at`
     - Seed predefined categories: Agua, Luz, Gas, Arriendo, Comida, Internet, Colegio, Transporte (mandatory); Netflix, Spotify, Amazon Prime (optional)
@@ -157,7 +157,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `CreateCategoryDto` with `@Length(1,40)`, `@IsNotEmpty()` on both name and emoji
     - _Requirements: 2.3 – 2.7, 3.2 – 3.4_
 
-  - [~] 6.3 Write property-based tests for custom category validation — P4, P5, P6
+  - [x] 6.3 Write property-based tests for custom category validation — P4, P5, P6
     - **Property 4: Valid custom category addition**
     - **Property 5: Invalid custom category is rejected**
     - **Property 6: Duplicate category name rejection (case-insensitive)**
@@ -179,7 +179,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Validate `payment_day` is 1–28; return 400 with field error otherwise
     - _Requirements: 2.7, 2.8, 3.4, 3.5_
 
-  - [~] 7.3 Write property-based test for payment day validation — P7
+  - [x] 7.3 Write property-based test for payment day validation — P7
     - **Property 7: Payment day validation accepts 1–28, rejects all others**
     - **Validates: Requirements 2.8, 3.5**
     - Use `fc.integer({ min: -100, max: 200 })`
@@ -230,7 +230,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - On successful save: dismiss modal signal (Req 4.7)
     - _Requirements: 4.2 – 4.7_
 
-  - [~] 9.3 Write property-based tests for vehicle date validations — P8, P9
+  - [x] 9.3 Write property-based tests for vehicle date validations — P8, P9
     - **Property 8: Vehicle purchase date cannot be in the future**
     - **Property 9: Vehicle expiry date must be after purchase date**
     - **Validates: Requirements 4.5, 4.6**
@@ -263,7 +263,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `DELETE /expenses/records/:id` — delete record; only owner can delete
     - _Requirements: 5.6, 5.7, 5.8, 5.9_
 
-  - [~] 10.3 Write property-based test for financial entry validation — P11
+  - [x] 10.3 Write property-based test for financial entry validation — P11
     - **Property 11: Financial entry amount and description validation**
     - **Validates: Requirements 5.1, 5.6, 5.7, 5.8**
     - Use `fc.float()` and `fc.string()` arbitraries spanning valid and invalid ranges
@@ -292,7 +292,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `POST /shared-budgets/invitations/:id/reject`
     - _Requirements: 5.2 – 5.5_
 
-  - [~] 11.3 Implement shared budget expense, income, and limit endpoints
+  - [x] 11.3 Implement shared budget expense, income, and limit endpoints
     - `POST /shared-budgets/:id/expenses` — validate amount 0.01–999_999_999.99, description ≤ 255; after insert recalculate total; if total > monthly_limit and `limit_notified = false`, dispatch budget-limit notification to all members and set `limit_notified = true` (Req 5.12)
     - `DELETE /shared-budgets/:id/expenses/:expId` — delete and recalculate total (Req 5.9)
     - `POST /shared-budgets/:id/incomes` — validate same amount/description rules (Req 5.6)

@@ -1,4 +1,5 @@
 import {
+  BadRequestException,
   ConflictException,
   Injectable,
   NotFoundException,
@@ -8,6 +9,7 @@ import { Repository } from 'typeorm';
 import { Vehicle } from './entities/vehicle.entity';
 import { CreateVehicleDto } from './dto/create-vehicle.dto';
 import { UpdateVehicleDto } from './dto/update-vehicle.dto';
+import { validateVehicleDates } from './vehicle-dates.validator';
 
 /**
  * Owns persistence for the single vehicle a user may register.
@@ -44,6 +46,18 @@ export class VehiclesService {
       throw new ConflictException('User already has a registered vehicle');
     }
 
+    // Cross-field date rules (Req 4.5/4.6, Properties P8/P9): purchase date not
+    // in the future, expiries not earlier than purchase date.
+    const dateCheck = validateVehicleDates({
+      purchaseDate: dto.purchaseDate,
+      soatExpiry: dto.soatExpiry,
+      tecnomecanicaExpiry: dto.tecnomecanicaExpiry,
+      kitExpiry: dto.kitExpiry ?? null,
+    });
+    if (!dateCheck.valid) {
+      throw new BadRequestException(dateCheck.errors);
+    }
+
     const vehicle = this.vehiclesRepository.create({
       userId,
       vehicleType: dto.vehicleType,
@@ -69,6 +83,19 @@ export class VehiclesService {
     const vehicle = await this.vehiclesRepository.findOneBy({ userId });
     if (!vehicle) {
       throw new NotFoundException('No vehicle registered for this user');
+    }
+
+    // Merge the existing record with the incoming patch, then validate the
+    // resulting date combination (Req 4.5/4.6, Properties P8/P9).
+    const merged = { ...vehicle, ...dto };
+    const dateCheck = validateVehicleDates({
+      purchaseDate: merged.purchaseDate,
+      soatExpiry: merged.soatExpiry,
+      tecnomecanicaExpiry: merged.tecnomecanicaExpiry,
+      kitExpiry: merged.kitExpiry ?? null,
+    });
+    if (!dateCheck.valid) {
+      throw new BadRequestException(dateCheck.errors);
     }
 
     Object.assign(vehicle, dto);

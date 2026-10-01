@@ -11,6 +11,22 @@
     "3.5 Write property-based test for password validator — P2 and P3": {
       "status": "passed",
       "lastRunTimestamp": 1790824049502
+    },
+    "7.3 Write property-based test for payment day validation — P7": {
+      "status": "passed",
+      "lastRunTimestamp": 1790825352478
+    },
+    "10.3 Write property-based test for financial entry validation — P11": {
+      "status": "passed",
+      "lastRunTimestamp": 1790825501629
+    },
+    "6.3 Write property-based tests for custom category validation — P4, P5, P6": {
+      "status": "passed",
+      "lastRunTimestamp": 1790825508376
+    },
+    "9.3 Write property-based tests for vehicle date validations — P8, P9": {
+      "status": "passed",
+      "lastRunTimestamp": 1790825553095
     }
   },
   "executionHistory": {
@@ -480,6 +496,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823406981
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825280014
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825600625
       }
     ],
     "7.1 Create `user_expenses` database migration and `UserExpense` TypeORM entity": [
@@ -536,6 +562,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823407489
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825280975
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825597636
       }
     ],
     "7.4 Implement mandatory expenses onboarding screen `apps/client/app/(onboarding)/mandatory-expenses.tsx`": [
@@ -652,6 +688,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823408873
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825281936
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825598559
       }
     ],
     "9.4 Implement vehicle registration screen `apps/client/app/(onboarding)/vehicle-registration.tsx` and `VehicleForm.tsx`": [
@@ -732,6 +778,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823409695
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825282976
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825599497
       }
     ],
     "10.4 Implement expense record UI components and screens in `apps/client`": [
@@ -800,6 +856,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823410301
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825278629
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825596453
       }
     ],
     "11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14": [
@@ -1317,6 +1383,13 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790824069600
+      }
+    ],
+    "6. Categories module — backend": [
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825600750
       }
     ]
   }

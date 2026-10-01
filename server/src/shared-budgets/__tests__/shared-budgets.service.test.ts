@@ -34,6 +34,16 @@ describe('SharedBudgetsService — unit tests', () => {
     save: jest.Mock;
     findOneBy: jest.Mock;
   };
+  let incomesRepo: {
+    create: jest.Mock;
+    save: jest.Mock;
+    find: jest.Mock;
+  };
+  let expenseRecordsRepo: {
+    create: jest.Mock;
+    save: jest.Mock;
+    find: jest.Mock;
+  };
   let usersService: { findByEmail: jest.Mock };
   let mailService: { sendBudgetInvitation: jest.Mock };
   let dataSource: { transaction: jest.Mock };
@@ -62,6 +72,16 @@ describe('SharedBudgetsService — unit tests', () => {
       save: jest.fn((entity: unknown) => Promise.resolve(entity)),
       findOneBy: jest.fn(),
     };
+    incomesRepo = {
+      create: jest.fn((data: unknown) => ({ ...(data as object) })),
+      save: jest.fn((entity: unknown) => Promise.resolve(entity)),
+      find: jest.fn(),
+    };
+    expenseRecordsRepo = {
+      create: jest.fn((data: unknown) => ({ ...(data as object) })),
+      save: jest.fn((entity: unknown) => Promise.resolve(entity)),
+      find: jest.fn(),
+    };
     usersService = { findByEmail: jest.fn() };
     mailService = { sendBudgetInvitation: jest.fn().mockResolvedValue(undefined) };
 
@@ -76,6 +96,8 @@ describe('SharedBudgetsService — unit tests', () => {
       budgetsRepo as never,
       membersRepo as never,
       invitationsRepo as never,
+      incomesRepo as never,
+      expenseRecordsRepo as never,
       usersService as unknown as UsersService,
       mailService as unknown as MailService,
       dataSource as never,
