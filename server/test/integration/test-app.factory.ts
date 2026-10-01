@@ -130,3 +130,31 @@ export async function closeTestApp(ctx: TestAppContext | null): Promise<void> {
   if (!ctx) return;
   await ctx.app.close();
 }
+
+/**
+ * Registers a user and logs in, returning the access token plus the user id.
+ * Used by integration specs to exercise JWT-guarded endpoints.
+ */
+export async function registerAndLogin(
+  app: import('@nestjs/common').INestApplication,
+  email: string,
+  password = 'StrongPass1!',
+): Promise<{ accessToken: string; userId: string }> {
+  const request = (await import('supertest')).default;
+  await request(app.getHttpServer())
+    .post('/api/v1/auth/register')
+    .send({ email, password });
+
+  const login = await request(app.getHttpServer())
+    .post('/api/v1/auth/login')
+    .send({ email, password });
+
+  const accessToken: string = login.body.accessToken;
+
+  const ds = app.get(DataSource);
+  const rows = await ds.query(
+    'SELECT id FROM users WHERE LOWER(email) = LOWER($1)',
+    [email],
+  );
+  return { accessToken, userId: rows[0]?.id as string };
+}
