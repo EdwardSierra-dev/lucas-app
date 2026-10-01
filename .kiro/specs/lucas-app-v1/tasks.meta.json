@@ -169,6 +169,21 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789658106056
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823404864
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823419617
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823424441
       }
     ],
     "2.5 Write unit tests for Modal skippable variant — P22": [
@@ -181,6 +196,21 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789658106630
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823405023
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823428719
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823876105
       }
     ],
     "3.1 Create the `users` database migration and `User` TypeORM entity": [
@@ -210,6 +240,21 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789658107227
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823405229
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823429670
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823876891
       }
     ],
     "3.3 Implement server-side password policy validation in `RegisterDto`": [
@@ -222,6 +267,21 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789658107762
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823405387
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823420750
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823425168
       }
     ],
     "3.4 Write property-based test for email validator — P1": [
@@ -229,6 +289,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561388
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823405563
       }
     ],
     "3.5 Write property-based test for password validator — P2 and P3": [
@@ -236,6 +301,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561444
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823405686
       }
     ],
     "4.1 Implement registration screen `apps/client/app/(auth)/register.tsx` and `RegistrationForm.tsx`": [
@@ -243,6 +313,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561492
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823405860
       }
     ],
     "4.2 Implement login screen `apps/client/app/(auth)/login.tsx`": [
@@ -250,6 +325,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561532
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823406007
       }
     ],
     "4.3 Implement `authStore.ts` (Zustand) and `authApi.ts` (React Query + Axios)": [
@@ -257,6 +337,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561573
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823406142
       }
     ],
     "4.4 Write unit tests for RegistrationForm": [
@@ -264,6 +349,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561620
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823406320
       }
     ],
     "5. Checkpoint — auth layer complete": [
@@ -271,6 +361,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561665
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823406496
       }
     ],
     "6.1 Create `categories` database migration and `Category` TypeORM entity": [
@@ -278,6 +373,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561700
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823406656
       }
     ],
     "6.2 Implement `CategoriesModule` with controller and service": [
@@ -285,6 +385,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561748
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823406823
       }
     ],
     "6.3 Write property-based tests for custom category validation — P4, P5, P6": [
@@ -292,6 +397,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561804
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823406981
       }
     ],
     "7.1 Create `user_expenses` database migration and `UserExpense` TypeORM entity": [
@@ -299,6 +409,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561846
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823407135
       }
     ],
     "7.2 Implement `ExpensesModule` — user expense slots endpoints": [
@@ -306,6 +421,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561890
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823407320
       }
     ],
     "7.3 Write property-based test for payment day validation — P7": [
@@ -313,6 +433,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561936
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823407489
       }
     ],
     "7.4 Implement mandatory expenses onboarding screen `apps/client/app/(onboarding)/mandatory-expenses.tsx`": [
@@ -320,6 +445,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653561981
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823407701
       }
     ],
     "7.5 Implement non-mandatory expenses onboarding screen `apps/client/app/(onboarding)/optional-expenses.tsx`": [
@@ -327,6 +457,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562028
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823407870
       }
     ],
     "7.6 Implement `expenseStore.ts` (Zustand) and `expensesApi.ts` (React Query)": [
@@ -334,6 +469,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562070
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823408044
       }
     ],
     "7.7 Write unit tests for expense configurator screens": [
@@ -341,6 +481,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562125
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823408229
       }
     ],
     "8. Checkpoint — onboarding categories complete": [
@@ -348,6 +493,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562170
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823408410
       }
     ],
     "9.1 Create `vehicles` database migration and `Vehicle` TypeORM entity": [
@@ -355,6 +505,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562215
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823408550
       }
     ],
     "9.2 Implement `VehiclesModule` with controller and service": [
@@ -362,6 +517,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562266
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823408708
       }
     ],
     "9.3 Write property-based tests for vehicle date validations — P8, P9": [
@@ -369,6 +529,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562322
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823408873
       }
     ],
     "9.4 Implement vehicle registration screen `apps/client/app/(onboarding)/vehicle-registration.tsx` and `VehicleForm.tsx`": [
@@ -376,6 +541,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562366
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823409035
       }
     ],
     "9.5 Write unit tests for VehicleForm": [
@@ -383,6 +553,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562410
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823409207
       }
     ],
     "10.1 Create `expense_records` database migration and `ExpenseRecord` TypeORM entity": [
@@ -390,6 +565,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562452
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823409350
       }
     ],
     "10.2 Implement expense records endpoints in `ExpensesModule`": [
@@ -397,6 +577,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562504
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823409549
       }
     ],
     "10.3 Write property-based test for financial entry validation — P11": [
@@ -404,6 +589,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562549
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823409695
       }
     ],
     "10.4 Implement expense record UI components and screens in `apps/client`": [
@@ -411,6 +601,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562601
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823409830
       }
     ],
     "11.1 Create `shared_budgets`, `budget_members`, `budget_invitations`, `budget_incomes` database migrations and TypeORM entities": [
@@ -418,6 +613,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562651
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823409995
       }
     ],
     "11.2 Implement `SharedBudgetsModule` — core endpoints": [
@@ -425,6 +625,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562695
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410138
       }
     ],
     "11.3 Implement shared budget expense, income, and limit endpoints": [
@@ -432,6 +637,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562766
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410301
       }
     ],
     "11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14": [
@@ -439,6 +649,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562808
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410406
       }
     ],
     "12.1 Implement shared budget screen `apps/client/app/(tabs)/shared-budget.tsx` and related forms": [
@@ -446,6 +661,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562852
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410527
       }
     ],
     "12.2 Implement `budgetStore.ts` (Zustand) and `sharedBudgetApi.ts` (React Query)": [
@@ -453,6 +673,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562899
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410641
       }
     ],
     "12.3 Write unit tests for shared budget UI": [
@@ -460,6 +685,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562949
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410767
       }
     ],
     "13. Checkpoint — shared budget complete": [
@@ -467,6 +697,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653562995
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410866
       }
     ],
     "14.1 Implement `MetricsModule` with `POST /metrics/expenses`": [
@@ -474,6 +709,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563039
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823410975
       }
     ],
     "14.2 Write property-based tests for metrics — P15, P16, P17": [
@@ -481,6 +721,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563094
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411126
       }
     ],
     "15.1 Implement metrics screen `apps/client/app/(tabs)/metrics.tsx`": [
@@ -488,6 +733,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563141
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411238
       }
     ],
     "15.2 Implement chart components": [
@@ -495,6 +745,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563179
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411342
       }
     ],
     "15.3 Implement `metricsApi.ts` React Query hook `useMetrics(filter: MetricsQueryDto)`": [
@@ -502,6 +757,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563226
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411470
       }
     ],
     "15.4 Write unit tests for metrics screen": [
@@ -509,6 +769,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563271
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411577
       }
     ],
     "16.1 Create `loans` database migration and `Loan` TypeORM entity": [
@@ -516,6 +781,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563318
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411694
       }
     ],
     "16.2 Implement `LoansModule` — endpoints": [
@@ -523,6 +793,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563368
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411824
       }
     ],
     "16.3 Write property-based tests for loan validation and computation — P18, P19, P20": [
@@ -530,6 +805,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563415
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823411943
       }
     ],
     "16.4 Implement loans screen `apps/client/app/(tabs)/loans.tsx` and `LoanForm.tsx`": [
@@ -537,6 +817,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563463
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823412066
       }
     ],
     "16.5 Write unit tests for LoanForm": [
@@ -544,6 +829,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563511
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823412224
       }
     ],
     "17. Checkpoint — domain modules complete": [
@@ -551,6 +841,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563559
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823412374
       }
     ],
     "18.1 Create `notifications` database migration and `Notification` TypeORM entity": [
@@ -558,6 +853,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563609
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823412508
       }
     ],
     "18.2 Implement `NotificationsModule` with `NotificationsService`": [
@@ -565,6 +865,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563653
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823412635
       }
     ],
     "18.3 Implement scheduled payment reminder job": [
@@ -572,6 +877,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563695
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823412736
       }
     ],
     "18.4 Implement vehicle document expiry reminder job": [
@@ -579,6 +889,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563737
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823412849
       }
     ],
     "18.5 Implement monthly cron job to reset `limit_notified`": [
@@ -586,6 +901,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563799
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413004
       }
     ],
     "18.6 Write property-based test for vehicle expiry notification window — P10": [
@@ -593,6 +913,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563857
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413147
       }
     ],
     "18.7 Write unit tests for notification scheduler": [
@@ -600,6 +925,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563911
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413268
       }
     ],
     "19.1 Register push notification token via Expo Notifications": [
@@ -607,6 +937,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653563960
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413383
       }
     ],
     "19.2 Wire Supabase Realtime in-app notification listener": [
@@ -614,6 +949,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564015
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413495
       }
     ],
     "19.3 Write unit tests for notification frontend integration": [
@@ -621,6 +961,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564089
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413600
       }
     ],
     "20. Checkpoint — notifications complete": [
@@ -628,6 +973,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564136
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413697
       }
     ],
     "21.1 Write integration test for full registration flow": [
@@ -635,6 +985,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564178
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413853
       }
     ],
     "21.2 Write integration test for shared budget invitation and acceptance flow": [
@@ -642,6 +997,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564221
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823413964
       }
     ],
     "21.3 Write integration test for budget limit notification fires exactly once": [
@@ -649,6 +1009,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564265
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823414077
       }
     ],
     "21.4 Write integration test for vehicle expiry scheduler": [
@@ -656,6 +1021,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564306
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823414213
       }
     ],
     "21.5 Write integration test for metrics endpoint correctness": [
@@ -663,6 +1033,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564353
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823414338
       }
     ],
     "22.1 Wire all onboarding navigation in `apps/client/app/_layout.tsx`": [
@@ -670,6 +1045,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564400
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823414485
       }
     ],
     "22.2 Implement `apps/client/app/(tabs)/dashboard.tsx` overview screen": [
@@ -677,6 +1057,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564457
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823414665
       }
     ],
     "22.3 Write Playwright E2E tests for Web (critical flows)": [
@@ -684,6 +1069,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564505
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823414785
       }
     ],
     "22.4 Write Detox E2E test for Android (smoke tests)": [
@@ -691,6 +1081,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564557
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823414896
       }
     ],
     "23. Final checkpoint — all tests pass": [
@@ -698,6 +1093,11 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789653564605
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823415016
       }
     ],
     "1. Project scaffolding and monorepo setup": [
@@ -705,6 +1105,13 @@
         "executionId": "42dc18ed-6875-4783-8fac-86a6e0186859",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1789655679833
+      }
+    ],
+    "2. Theme constants, UI primitives, and shared components": [
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790823876194
       }
     ]
   }

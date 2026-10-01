@@ -43,7 +43,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 2. Theme constants, UI primitives, and shared components
+- [x] 2. Theme constants, UI primitives, and shared components
   - [x] 2.1 Create `apps/client/constants/theme.ts` with the full color palette and touch target constants
     - Export `Colors` object: `primary: '#B8A9E3'`, `secondary: '#A8D8C2'`, `accent: '#F2B8A0'`, `background: '#F7F5FF'`, `text: '#6B7280'`
     - Export `TouchTarget = { minWidth: 44, minHeight: 44 }`
@@ -64,12 +64,12 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `formatMoney(amount: number, currency?: string): string` using `Intl.NumberFormat('es-CO', { style: 'currency', minimumFractionDigits: 2, maximumFractionDigits: 2 })`
     - _Requirements: 8.3_
 
-  - [ ] 2.4 Write property test for `formatMoney` — P21
+  - [x] 2.4 Write property test for `formatMoney` — P21
     - **Property 21: Monetary formatting always produces two decimal places**
     - **Validates: Requirements 8.3**
     - Use `fc.float({ noNaN: true, noDefaultInfinity: true })` as arbitrary
 
-  - [ ] 2.5 Write unit tests for Modal skippable variant — P22
+  - [x] 2.5 Write unit tests for Modal skippable variant — P22
     - **Property 22: Skippable modal renders Omitir button meeting touch target**
     - **Validates: Requirements 8.5**
     - Use React Native Testing Library to assert "Omitir" element and style dimensions
@@ -81,7 +81,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Columns: `id` UUID PK, `email` VARCHAR(254) UNIQUE, `password_hash`, `display_name`, `currency` DEFAULT 'COP', `vehicle_owner` BOOLEAN, `email_verified` BOOLEAN, `onboarding_done` BOOLEAN, `created_at`, `updated_at`
     - _Requirements: 1.1 – 1.10_
 
-  - [ ] 3.2 Implement `AuthModule` with register, login, refresh, logout, and email-verify endpoints
+  - [x] 3.2 Implement `AuthModule` with register, login, refresh, logout, and email-verify endpoints
     - `POST /auth/register` — hash password with bcrypt, insert user, dispatch confirmation email within 60 s, return 201
     - `POST /auth/login` — validate credentials, return `{ accessToken, refreshToken }` (access TTL 15 min, refresh TTL 7 days)
     - `POST /auth/refresh` — exchange valid refresh token for new access token
@@ -91,18 +91,18 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Implement `JwtStrategy` and `JwtAuthGuard`
     - _Requirements: 1.1 – 1.10_
 
-  - [ ] 3.3 Implement server-side password policy validation in `RegisterDto`
+  - [x] 3.3 Implement server-side password policy validation in `RegisterDto`
     - Regex: `^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\-=\[\]{}|;':",.<>?\/]).{8,128}$`
     - Map validation failures to field-level error messages array
     - Return 409 if email already registered
     - _Requirements: 1.3, 1.4, 1.9_
 
-  - [ ] 3.4 Write property-based test for email validator — P1
+  - [~] 3.4 Write property-based test for email validator — P1
     - **Property 1: Email validation accepts valid and rejects invalid addresses**
     - **Validates: Requirements 1.1, 1.2**
     - Test both the client-side Zod schema and server-side `@IsEmail()` guard
 
-  - [ ] 3.5 Write property-based test for password validator — P2 and P3
+  - [~] 3.5 Write property-based test for password validator — P2 and P3
     - **Property 2: Password validator enforces all criteria and reports unmet ones**
     - **Property 3: Password confirmation match**
     - **Validates: Requirements 1.3, 1.4, 1.6**
@@ -111,7 +111,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 4. Authentication — frontend
-  - [ ] 4.1 Implement registration screen `apps/client/app/(auth)/register.tsx` and `RegistrationForm.tsx`
+  - [~] 4.1 Implement registration screen `apps/client/app/(auth)/register.tsx` and `RegistrationForm.tsx`
     - Email field with `Email_Validator` (Zod `z.string().email()` regex aligned with Req 1.1) — show inline error on blur/submit if invalid (Req 1.2)
     - Password field with `Password_Validator` — enforce min 8 / max 128 chars, 1 uppercase, 1 digit, 1 special char; show per-criterion inline errors (Req 1.3, 1.4)
     - Password confirmation field — show mismatch error if values differ (Req 1.5, 1.6)
@@ -121,23 +121,23 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - All interactive elements ≥ 44×44 px (Req 8.2); use only palette colors (Req 8.1)
     - _Requirements: 1.1 – 1.10, 8.1, 8.2_
 
-  - [ ] 4.2 Implement login screen `apps/client/app/(auth)/login.tsx`
+  - [~] 4.2 Implement login screen `apps/client/app/(auth)/login.tsx`
     - Email + password fields, submit calls `POST /auth/login`, stores tokens in `authStore`
     - Inline error on invalid credentials (401 response)
     - Axios interceptor for silent token refresh on 401 with valid refresh token
     - _Requirements: 1 (auth flow), design auth section_
 
-  - [ ] 4.3 Implement `authStore.ts` (Zustand) and `authApi.ts` (React Query + Axios)
+  - [~] 4.3 Implement `authStore.ts` (Zustand) and `authApi.ts` (React Query + Axios)
     - Store: `accessToken`, `refreshToken`, `user` profile, `clearAuth()` action
     - API hooks: `useRegister`, `useLogin`, `useLogout`, `useRefreshToken`
     - Axios instance with `Authorization: Bearer` interceptor and refresh-on-401 logic
     - _Requirements: 1, design auth section_
 
-  - [ ] 4.4 Write unit tests for RegistrationForm
+  - [~] 4.4 Write unit tests for RegistrationForm
     - Test: success modal shown after registration; 409 shows inline email error; 500 preserves form values; password mismatch error; each password criterion error listed individually
     - _Requirements: 1.2, 1.4, 1.7, 1.9, 1.10_
 
-- [ ] 5. Checkpoint — auth layer complete
+- [~] 5. Checkpoint — auth layer complete
   - Ensure all auth backend unit + property tests pass (`cd server && npx jest --runInBand --testPathPattern=auth`)
   - Ensure registration form renders and validates correctly in Expo Web
   - Ask user if any adjustments are needed before proceeding.
@@ -145,19 +145,19 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 6. Categories module — backend
-  - [ ] 6.1 Create `categories` database migration and `Category` TypeORM entity
+  - [~] 6.1 Create `categories` database migration and `Category` TypeORM entity
     - Columns per schema: `id`, `user_id` (nullable for predefined), `name` VARCHAR(40), `emoji` VARCHAR(10), `type` enum, `is_predefined`, `created_at`
     - Seed predefined categories: Agua, Luz, Gas, Arriendo, Comida, Internet, Colegio, Transporte (mandatory); Netflix, Spotify, Amazon Prime (optional)
     - _Requirements: 2.2, 3.2_
 
-  - [ ] 6.2 Implement `CategoriesModule` with controller and service
+  - [~] 6.2 Implement `CategoriesModule` with controller and service
     - `GET /categories?type=mandatory|optional` — returns predefined + user's custom categories
     - `POST /categories` — create custom category; validate name 1–40 chars, non-empty emoji, reject duplicate name case-insensitively (`LOWER(name)` check), enforce 20-category max for optional (Req 3.3)
     - `DELETE /categories/:id` — only owner can delete custom; predefined categories cannot be deleted
     - `CreateCategoryDto` with `@Length(1,40)`, `@IsNotEmpty()` on both name and emoji
     - _Requirements: 2.3 – 2.7, 3.2 – 3.4_
 
-  - [ ] 6.3 Write property-based tests for custom category validation — P4, P5, P6
+  - [~] 6.3 Write property-based tests for custom category validation — P4, P5, P6
     - **Property 4: Valid custom category addition**
     - **Property 5: Invalid custom category is rejected**
     - **Property 6: Duplicate category name rejection (case-insensitive)**
@@ -166,12 +166,12 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 7. Onboarding flow — mandatory and non-mandatory expenses
-  - [ ] 7.1 Create `user_expenses` database migration and `UserExpense` TypeORM entity
+  - [~] 7.1 Create `user_expenses` database migration and `UserExpense` TypeORM entity
     - Columns: `id`, `user_id`, `category_id`, `payment_day` SMALLINT CHECK 1–28, `is_active`, `created_at`, `updated_at`
     - Unique constraint `(user_id, category_id)`
     - _Requirements: 2.8, 3.5_
 
-  - [ ] 7.2 Implement `ExpensesModule` — user expense slots endpoints
+  - [~] 7.2 Implement `ExpensesModule` — user expense slots endpoints
     - `GET /expenses` — list configured expense slots for authenticated user
     - `POST /expenses` — configure slot (category_id + optional payment_day 1–28)
     - `PATCH /expenses/:id` — update payment_day
@@ -179,12 +179,12 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Validate `payment_day` is 1–28; return 400 with field error otherwise
     - _Requirements: 2.7, 2.8, 3.4, 3.5_
 
-  - [ ] 7.3 Write property-based test for payment day validation — P7
+  - [~] 7.3 Write property-based test for payment day validation — P7
     - **Property 7: Payment day validation accepts 1–28, rejects all others**
     - **Validates: Requirements 2.8, 3.5**
     - Use `fc.integer({ min: -100, max: 200 })`
 
-  - [ ] 7.4 Implement mandatory expenses onboarding screen `apps/client/app/(onboarding)/mandatory-expenses.tsx`
+  - [~] 7.4 Implement mandatory expenses onboarding screen `apps/client/app/(onboarding)/mandatory-expenses.tsx`
     - On entry: show skippable modal with message "Estos gastos mensuales son aquellos que no puedes dejar de pagar o sino pailas papi 💪🏻"; dismiss closes modal and shows list (Req 2.1)
     - Render multi-select list of predefined mandatory categories using `CategoryCard` components (Req 2.2)
     - "+" button opens `ExpenseCategoryForm.tsx` — name input (1–30 chars for mandatory), `EmojiPicker`, submit adds to list (Req 2.3, 2.4)
@@ -194,7 +194,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Vehicle ownership Yes/No question at bottom; "Yes" triggers Vehicle_Module activation (`PATCH /users/me` → `vehicle_owner = true`) (Req 2.10, 2.11)
     - _Requirements: 2.1 – 2.11, 8.1, 8.2, 8.5_
 
-  - [ ] 7.5 Implement non-mandatory expenses onboarding screen `apps/client/app/(onboarding)/optional-expenses.tsx`
+  - [~] 7.5 Implement non-mandatory expenses onboarding screen `apps/client/app/(onboarding)/optional-expenses.tsx`
     - On entry: show skippable modal with message "Estos gastos son aquellos que quieres pero no los necesitas 😎 alguien tenía que decírtelo" and "Omitir" button (Req 3.1)
     - Render multi-select list with Netflix, Spotify, Amazon Prime predefined categories (Req 3.2)
     - "+" button allows adding custom optional category (name 1–40 chars, emoji), max 20 custom categories (Req 3.3)
@@ -202,16 +202,16 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Payment date input per selected category (1–28) (Req 3.5)
     - _Requirements: 3.1 – 3.5, 8.1, 8.2, 8.5_
 
-  - [ ] 7.6 Implement `expenseStore.ts` (Zustand) and `expensesApi.ts` (React Query)
+  - [~] 7.6 Implement `expenseStore.ts` (Zustand) and `expensesApi.ts` (React Query)
     - Store: selected categories map, custom categories list
     - Hooks: `useCategories`, `useConfigureExpense`, `useUpdatePaymentDay`, `useDeleteExpenseSlot`
     - _Requirements: 2, 3_
 
-  - [ ] 7.7 Write unit tests for expense configurator screens
+  - [~] 7.7 Write unit tests for expense configurator screens
     - Test: 8 predefined mandatory categories rendered; "+" button opens form; duplicate name shows error; custom category added to list; deselect removes from active list; 3 predefined optional categories rendered; max-20 custom limit enforced
     - _Requirements: 2.2, 2.4, 2.5, 2.6, 2.7, 3.2, 3.3_
 
-- [ ] 8. Checkpoint — onboarding categories complete
+- [~] 8. Checkpoint — onboarding categories complete
   - Run `npx jest --runInBand --testPathPattern=categories|expenses` in server
   - Run `npx jest --runInBand --testPathPattern=mandatory|optional` in apps/client
   - Ask user if any adjustments are needed before proceeding.
@@ -219,24 +219,24 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 9. Vehicle module — backend and frontend
-  - [ ] 9.1 Create `vehicles` database migration and `Vehicle` TypeORM entity
+  - [~] 9.1 Create `vehicles` database migration and `Vehicle` TypeORM entity
     - Columns: `id`, `user_id` UNIQUE, `vehicle_type`, `model`, `purchase_date` DATE, `soat_expiry` DATE, `tecnomecanica_expiry` DATE, `kit_expiry` DATE (nullable), `created_at`, `updated_at`
     - _Requirements: 4.1 – 4.10_
 
-  - [ ] 9.2 Implement `VehiclesModule` with controller and service
+  - [~] 9.2 Implement `VehiclesModule` with controller and service
     - `GET /vehicles/me` — get authenticated user's vehicle record
     - `POST /vehicles` — register vehicle; validate all required fields present (Req 4.2, 4.3); reject `purchase_date` > today (Req 4.5); reject expiry date < purchase_date (Req 4.6); `kit_expiry` is optional (Req 4.4)
     - `PATCH /vehicles/me` — update vehicle data with same validations
     - On successful save: dismiss modal signal (Req 4.7)
     - _Requirements: 4.2 – 4.7_
 
-  - [ ] 9.3 Write property-based tests for vehicle date validations — P8, P9
+  - [~] 9.3 Write property-based tests for vehicle date validations — P8, P9
     - **Property 8: Vehicle purchase date cannot be in the future**
     - **Property 9: Vehicle expiry date must be after purchase date**
     - **Validates: Requirements 4.5, 4.6**
     - Use `fc.date()` arbitraries filtered to future and past/future pairs
 
-  - [ ] 9.4 Implement vehicle registration screen `apps/client/app/(onboarding)/vehicle-registration.tsx` and `VehicleForm.tsx`
+  - [~] 9.4 Implement vehicle registration screen `apps/client/app/(onboarding)/vehicle-registration.tsx` and `VehicleForm.tsx`
     - Conditionally rendered only when `vehicle_owner = true` (Req 2.11)
     - Modal title: "Páseme los datos del maquinón" (Req 4.1)
     - Required fields: vehicle type, model, purchase/registration date, SOAT expiry, Tecnomecánica expiry (Req 4.2)
@@ -245,30 +245,30 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - On success: save record, dismiss modal, advance navigation (Req 4.7)
     - _Requirements: 4.1 – 4.7, 8.1, 8.2_
 
-  - [ ] 9.5 Write unit tests for VehicleForm
+  - [~] 9.5 Write unit tests for VehicleForm
     - Test: required field errors on empty submit; purchase date > today rejected; expiry date < purchase date rejected; kit date field absent from validation errors when empty; successful submission dismisses modal
     - _Requirements: 4.3 – 4.7_
 
 ---
 
 - [ ] 10. Expense records module — backend and frontend
-  - [ ] 10.1 Create `expense_records` database migration and `ExpenseRecord` TypeORM entity
+  - [~] 10.1 Create `expense_records` database migration and `ExpenseRecord` TypeORM entity
     - Columns and indexes per schema: `(user_id, expense_date)` composite index, `category_id` index
     - Enforce `amount` NUMERIC(14,2) CHECK > 0 AND ≤ 999_999_999.99, `description` VARCHAR(255)
     - _Requirements: 5.6, 5.7, 5.8_
 
-  - [ ] 10.2 Implement expense records endpoints in `ExpensesModule`
+  - [~] 10.2 Implement expense records endpoints in `ExpensesModule`
     - `GET /expenses/records` — list expense records, support query params for filtering (month, category, date range)
     - `POST /expenses/records` — add expense record; validate amount 0.01–999_999_999.99, description ≤ 255 chars
     - `DELETE /expenses/records/:id` — delete record; only owner can delete
     - _Requirements: 5.6, 5.7, 5.8, 5.9_
 
-  - [ ] 10.3 Write property-based test for financial entry validation — P11
+  - [~] 10.3 Write property-based test for financial entry validation — P11
     - **Property 11: Financial entry amount and description validation**
     - **Validates: Requirements 5.1, 5.6, 5.7, 5.8**
     - Use `fc.float()` and `fc.string()` arbitraries spanning valid and invalid ranges
 
-  - [ ] 10.4 Implement expense record UI components and screens in `apps/client`
+  - [~] 10.4 Implement expense record UI components and screens in `apps/client`
     - `MoneyInput.tsx` — already scaffolded in task 2.2; wire to expense record form
     - Add expense record form accessible from dashboard: category selector, amount (`MoneyInput`), description (max 255 chars), date picker
     - Display validation errors inline for amount and description
@@ -277,14 +277,14 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 11. Shared budget module — backend
-  - [ ] 11.1 Create `shared_budgets`, `budget_members`, `budget_invitations`, `budget_incomes` database migrations and TypeORM entities
+  - [~] 11.1 Create `shared_budgets`, `budget_members`, `budget_invitations`, `budget_incomes` database migrations and TypeORM entities
     - `shared_budgets`: `id`, `name`, `monthly_limit` NUMERIC(14,2), `limit_notified` BOOLEAN DEFAULT false, timestamps
     - `budget_members`: composite PK `(budget_id, user_id)`, `role`, `joined_at`
     - `budget_invitations`: `id`, `budget_id`, `inviter_id`, `invitee_email`, `status` enum, `expires_at`
     - `budget_incomes`: `id`, `budget_id`, `user_id`, `amount`, `description`, `income_date`
     - _Requirements: 5.1 – 5.12_
 
-  - [ ] 11.2 Implement `SharedBudgetsModule` — core endpoints
+  - [~] 11.2 Implement `SharedBudgetsModule` — core endpoints
     - `POST /shared-budgets` — create shared budget
     - `GET /shared-budgets/me` — get budget the authenticated user belongs to
     - `POST /shared-budgets/:id/invite` — invite user by email; reject if email not found with error message (Req 5.3); immediately insert in-app notification (Req 5.4)
@@ -292,14 +292,14 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `POST /shared-budgets/invitations/:id/reject`
     - _Requirements: 5.2 – 5.5_
 
-  - [ ] 11.3 Implement shared budget expense, income, and limit endpoints
+  - [~] 11.3 Implement shared budget expense, income, and limit endpoints
     - `POST /shared-budgets/:id/expenses` — validate amount 0.01–999_999_999.99, description ≤ 255; after insert recalculate total; if total > monthly_limit and `limit_notified = false`, dispatch budget-limit notification to all members and set `limit_notified = true` (Req 5.12)
     - `DELETE /shared-budgets/:id/expenses/:expId` — delete and recalculate total (Req 5.9)
     - `POST /shared-budgets/:id/incomes` — validate same amount/description rules (Req 5.6)
     - `PATCH /shared-budgets/:id/limit` — validate `SetLimitDto`: `@Min(0.01) @Max(999_999_999.99)` (Req 5.10, 5.11)
     - _Requirements: 5.6 – 5.12_
 
-  - [ ] 11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14
+  - [~] 11.4 Write property-based tests for shared budget validation — P11, P12, P13, P14
     - **Property 11: Financial entry amount and description validation** (shared budget variant)
     - **Property 12: Expense removal recalculates budget total exactly**
     - **Property 13: Monthly budget limit validation**
@@ -309,7 +309,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 12. Shared budget — frontend
-  - [ ] 12.1 Implement shared budget screen `apps/client/app/(tabs)/shared-budget.tsx` and related forms
+  - [~] 12.1 Implement shared budget screen `apps/client/app/(tabs)/shared-budget.tsx` and related forms
     - `BudgetLimitForm.tsx` — `MoneyInput` for monthly limit, validation error on invalid amount
     - Income entry form — amount + description fields with validation
     - Expense entry form — amount + description fields with validation
@@ -317,24 +317,24 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Display current total expenses vs monthly limit with Peach accent alert when limit exceeded
     - _Requirements: 5.1 – 5.12, 8.1, 8.2, 8.3_
 
-  - [ ] 12.2 Implement `budgetStore.ts` (Zustand) and `sharedBudgetApi.ts` (React Query)
+  - [~] 12.2 Implement `budgetStore.ts` (Zustand) and `sharedBudgetApi.ts` (React Query)
     - Store: budget state, members list, expenses list, incomes list, limit
     - Subscribe to Supabase Realtime channel for `notifications` INSERT events to receive budget invitations ≤ 30 s (Req 5.4)
     - Hooks: `useSharedBudget`, `useInviteUser`, `useAcceptInvitation`, `useAddBudgetExpense`, `useRemoveBudgetExpense`, `useAddBudgetIncome`, `useSetBudgetLimit`
     - _Requirements: 5.4, 5.5_
 
-  - [ ] 12.3 Write unit tests for shared budget UI
+  - [~] 12.3 Write unit tests for shared budget UI
     - Test: invitation error shown for unknown email; expense form rejects amount=0; limit form rejects limit=0; expense list updates after delete
     - _Requirements: 5.3, 5.8, 5.11_
 
-- [ ] 13. Checkpoint — shared budget complete
+- [~] 13. Checkpoint — shared budget complete
   - Run `npx jest --runInBand --testPathPattern=shared-budget` in server and apps/client
   - Ask user if any adjustments are needed before proceeding.
 
 ---
 
 - [ ] 14. Metrics module — backend
-  - [ ] 14.1 Implement `MetricsModule` with `POST /metrics/expenses`
+  - [~] 14.1 Implement `MetricsModule` with `POST /metrics/expenses`
     - Accept `MetricsQueryDto`: optional `months[]` (up to 5), `categoryId`, `startDate`, `endDate` (ISO date), `budgetMemberId`
     - Reject filter if `startDate > endDate` with 400 validation error (Req 6.7)
     - Execute filtered query against `expense_records` with all applicable WHERE clauses; use database-level filtering for performance
@@ -342,7 +342,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Return `totalSum: 0` and empty records array when no matches (Req 6.8)
     - _Requirements: 6.1 – 6.8_
 
-  - [ ] 14.2 Write property-based tests for metrics — P15, P16, P17
+  - [~] 14.2 Write property-based tests for metrics — P15, P16, P17
     - **Property 15: Metrics filter returns only matching records**
     - **Property 16: Metrics total sum equals sum of matching records**
     - **Property 17: Metrics rejects date range where start exceeds end**
@@ -352,7 +352,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 15. Metrics — frontend
-  - [ ] 15.1 Implement metrics screen `apps/client/app/(tabs)/metrics.tsx`
+  - [~] 15.1 Implement metrics screen `apps/client/app/(tabs)/metrics.tsx`
     - Month selector (up to 5 calendar months) — chips/toggle UI using `colors.primary`
     - Category dropdown filter
     - Date range picker (start + end); show error "rango de fechas inválido" if start > end without clearing results (Req 6.7)
@@ -361,43 +361,43 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Show zero total and "no records found" message on empty results (Req 6.8)
     - _Requirements: 6.1 – 6.8, 8.1, 8.2, 8.3_
 
-  - [ ] 15.2 Implement chart components
+  - [~] 15.2 Implement chart components
     - `SpendingBarChart.tsx` — bar chart of totals by month using palette colors
     - `CategoryPieChart.tsx` — pie chart of totals by category
     - Wire charts to metrics response data
     - _Requirements: 6.6, 8.1_
 
-  - [ ] 15.3 Implement `metricsApi.ts` React Query hook `useMetrics(filter: MetricsQueryDto)`
+  - [~] 15.3 Implement `metricsApi.ts` React Query hook `useMetrics(filter: MetricsQueryDto)`
     - Returns `{ totalSum, records, isLoading, isError }`
     - _Requirements: 6.5_
 
-  - [ ] 15.4 Write unit tests for metrics screen
+  - [~] 15.4 Write unit tests for metrics screen
     - Test: date range error shown without clearing results; zero-result state displayed; correct total sum rendered for given records
     - _Requirements: 6.7, 6.8_
 
 ---
 
 - [ ] 16. Loans module — backend and frontend
-  - [ ] 16.1 Create `loans` database migration and `Loan` TypeORM entity
+  - [~] 16.1 Create `loans` database migration and `Loan` TypeORM entity
     - Columns per schema with CHECK constraints for bank/person fields
     - `CONSTRAINT bank_loan_fields`, `CONSTRAINT person_loan_fields` as defined in design
     - _Requirements: 7.1 – 7.9_
 
-  - [ ] 16.2 Implement `LoansModule` — endpoints
+  - [~] 16.2 Implement `LoansModule` — endpoints
     - `GET /loans` — list active loans where `installments_paid < total_installments`; compute and return `remainingInstallments` and `outstandingAmount` using shared utilities (Req 7.9)
     - `POST /loans` — create loan; validate by source type: bank requires `cuota > 0` (Req 7.3); person requires `capital > 0`, `interest_per_installment ≥ 0`, `total_installments > 0` (Req 7.6, 7.7, 7.8); compute and return `totalRepayment` before confirmation (Req 7.5)
     - `PATCH /loans/:id/installment` — increment `installments_paid`
     - `DELETE /loans/:id` — delete loan record
     - _Requirements: 7.1 – 7.9_
 
-  - [ ] 16.3 Write property-based tests for loan validation and computation — P18, P19, P20
+  - [~] 16.3 Write property-based tests for loan validation and computation — P18, P19, P20
     - **Property 18: Loan input validation (bank and person)**
     - **Property 19: Person loan total repayment computation = capital + (interest × installments)**
     - **Property 20: Active loan remaining and outstanding amount computation**
     - **Validates: Requirements 7.3, 7.5, 7.6, 7.7, 7.8, 7.9**
     - Use `fc.tuple(fc.float(...), fc.float(...), fc.integer(...))` as per design test strategy
 
-  - [ ] 16.4 Implement loans screen `apps/client/app/(tabs)/loans.tsx` and `LoanForm.tsx`
+  - [~] 16.4 Implement loans screen `apps/client/app/(tabs)/loans.tsx` and `LoanForm.tsx`
     - When user selects "Préstamo" as expense category, show two-option prompt: "Banco" or "Persona" (Req 7.1)
     - Bank path: show only `cuota` input; validation error if ≤ 0 (Req 7.2, 7.3)
     - Person path: show capital, interest per installment, total installments fields; compute and display total repayment `C + I × N` before confirmation (Req 7.4, 7.5); validation errors per field (Req 7.6 – 7.8)
@@ -405,11 +405,11 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - All amounts rendered via `MoneyInput` / `formatMoney` (Req 8.3)
     - _Requirements: 7.1 – 7.9, 8.1, 8.2, 8.3_
 
-  - [ ] 16.5 Write unit tests for LoanForm
+  - [~] 16.5 Write unit tests for LoanForm
     - Test: bank path shows only cuota field; person path shows 3 fields; cuota=0 shows error; capital=0 shows error; interest<0 shows error; installments=0 shows error; total repayment formula displayed correctly
     - _Requirements: 7.1 – 7.8_
 
-- [ ] 17. Checkpoint — domain modules complete
+- [~] 17. Checkpoint — domain modules complete
   - Run full backend test suite: `cd server && npx jest --runInBand`
   - Run full frontend test suite: `cd apps/client && npx jest --runInBand`
   - Ask user if any adjustments are needed before proceeding to notifications.
@@ -417,115 +417,115 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 18. Notification system — backend scheduler and event triggers
-  - [ ] 18.1 Create `notifications` database migration and `Notification` TypeORM entity
+  - [~] 18.1 Create `notifications` database migration and `Notification` TypeORM entity
     - Columns: `id`, `user_id`, `type` VARCHAR(50), `payload` JSONB, `channel` VARCHAR(20) CHECK ('in_app','push','email'), `read` BOOLEAN, `sent_at`, `created_at`
     - Index: `(user_id, read, created_at DESC)`
     - _Requirements: 2.9, 3.6, 4.8, 4.9, 4.10, 5.4, 5.12_
 
-  - [ ] 18.2 Implement `NotificationsModule` with `NotificationsService`
+  - [~] 18.2 Implement `NotificationsModule` with `NotificationsService`
     - `createNotification(userId, type, payload, channel)` — insert into `notifications` table
     - `GET /notifications` — list unread notifications for authenticated user
     - `PATCH /notifications/:id/read` — mark as read
     - Wire Supabase Realtime channel subscription on client to `notifications` table INSERT for user
     - _Requirements: 5.4, general notification delivery_
 
-  - [ ] 18.3 Implement scheduled payment reminder job
+  - [~] 18.3 Implement scheduled payment reminder job
     - `@Cron('50 8 * * *')` — `sendPaymentReminders()`: query `user_expenses` where `payment_day = tomorrow OR payment_day = today`; dispatch push notification per slot (Req 2.9, 3.6)
     - Non-mandatory reminder dispatched at 09:00 local time on payment day (Req 3.6)
     - One-day-away reminder for mandatory expenses (Req 2.9)
     - _Requirements: 2.9, 3.6_
 
-  - [ ] 18.4 Implement vehicle document expiry reminder job
+  - [~] 18.4 Implement vehicle document expiry reminder job
     - `@Cron('0 8 * * *')` — `sendVehicleExpiryReminders()`: query vehicles where `soat_expiry`, `tecnomecanica_expiry`, or `kit_expiry` is within 30 calendar days of today
     - Dispatch one notification per expiring document per user identifying the document (Req 4.8, 4.9, 4.10)
     - No notification if expiry > 30 days away or already past
     - _Requirements: 4.8, 4.9, 4.10_
 
-  - [ ] 18.5 Implement monthly cron job to reset `limit_notified`
+  - [~] 18.5 Implement monthly cron job to reset `limit_notified`
     - `@Cron('0 0 1 * *')` — reset `limit_notified = false` on all `shared_budgets` at start of each month
     - _Requirements: 5.12, design error handling section_
 
-  - [ ] 18.6 Write property-based test for vehicle expiry notification window — P10
+  - [~] 18.6 Write property-based test for vehicle expiry notification window — P10
     - **Property 10: Vehicle document expiry notification window (0–30 days)**
     - **Validates: Requirements 4.8, 4.9, 4.10**
     - Use `fc.date()` arbitraries; assert notification dispatched iff days-to-expiry ∈ [0, 30]
 
-  - [ ] 18.7 Write unit tests for notification scheduler
+  - [~] 18.7 Write unit tests for notification scheduler
     - Test: payment reminder job dispatches for payment_day = today and tomorrow; vehicle expiry dispatches for T+29, not T+31; budget limit notification created exactly once when expenses cross limit; in-app notification inserted within budget invite path
     - _Requirements: 2.9, 3.6, 4.8 – 4.10, 5.4, 5.12_
 
 ---
 
 - [ ] 19. Notification system — frontend
-  - [ ] 19.1 Register push notification token via Expo Notifications
+  - [~] 19.1 Register push notification token via Expo Notifications
     - On app startup, call `Notifications.getExpoPushTokenAsync()` and persist token to `PATCH /users/me` (or dedicated endpoint)
     - Request permissions with user-friendly prompt
     - _Requirements: 2.9, 3.6, 4.8 – 4.10_
 
-  - [ ] 19.2 Wire Supabase Realtime in-app notification listener
+  - [~] 19.2 Wire Supabase Realtime in-app notification listener
     - Subscribe to Supabase Realtime channel for authenticated user's `notifications` table INSERT events
     - On new notification: update `NotificationBadge` count in `budgetStore` / dedicated notification slice
     - Display in-app alert for `budget_invitation` type notifications within 30 s (Req 5.4)
     - _Requirements: 5.4_
 
-  - [ ] 19.3 Write unit tests for notification frontend integration
+  - [~] 19.3 Write unit tests for notification frontend integration
     - Test: NotificationBadge count increments on new in-app notification; budget limit alert banner shows when limit exceeded; push token registration called on startup
     - _Requirements: 5.4, 5.12_
 
-- [ ] 20. Checkpoint — notifications complete
+- [~] 20. Checkpoint — notifications complete
   - Run full backend test suite including scheduler tests
   - Ask user if any adjustments are needed before final integration tests.
 
 ---
 
 - [ ] 21. API integration tests (Supertest + local Supabase)
-  - [ ] 21.1 Write integration test for full registration flow
+  - [~] 21.1 Write integration test for full registration flow
     - `POST /auth/register` success → assert 201, user in DB, email job queued
     - `POST /auth/register` with existing email → assert 409 with conflict message
     - _Requirements: 1.7, 1.8, 1.9_
 
-  - [ ] 21.2 Write integration test for shared budget invitation and acceptance flow
+  - [~] 21.2 Write integration test for shared budget invitation and acceptance flow
     - Create budget → invite by email → accept invitation → assert both members can write expenses and incomes
     - _Requirements: 5.2 – 5.5_
 
-  - [ ] 21.3 Write integration test for budget limit notification fires exactly once
+  - [~] 21.3 Write integration test for budget limit notification fires exactly once
     - Seed shared budget with limit L; add expenses summing to > L; assert `notifications` has exactly one budget_limit record for that month cycle; add more expenses; assert still exactly one record
     - _Requirements: 5.12_
 
-  - [ ] 21.4 Write integration test for vehicle expiry scheduler
+  - [~] 21.4 Write integration test for vehicle expiry scheduler
     - Seed vehicles with `soat_expiry = today + 29 days` and `soat_expiry = today + 31 days`; run scheduler manually; assert notification created for T+29 only
     - _Requirements: 4.8_
 
-  - [ ] 21.5 Write integration test for metrics endpoint correctness
+  - [~] 21.5 Write integration test for metrics endpoint correctness
     - Seed expense records spanning multiple months and categories; call `POST /metrics/expenses` with various filter combinations; assert `totalSum` equals arithmetic sum of returned records
     - _Requirements: 6.5, 6.6_
 
 ---
 
 - [ ] 22. E2E and final wiring
-  - [ ] 22.1 Wire all onboarding navigation in `apps/client/app/_layout.tsx`
+  - [~] 22.1 Wire all onboarding navigation in `apps/client/app/_layout.tsx`
     - Unauthenticated users → `(auth)/register` or `(auth)/login`
     - Authenticated + `onboarding_done = false` → `(onboarding)/mandatory-expenses` → `(onboarding)/optional-expenses` → conditionally `(onboarding)/vehicle-registration` → set `onboarding_done = true` → `(tabs)/dashboard`
     - Authenticated + `onboarding_done = true` → `(tabs)/dashboard`
     - _Requirements: 2, 3, 4, design navigation section_
 
-  - [ ] 22.2 Implement `apps/client/app/(tabs)/dashboard.tsx` overview screen
+  - [~] 22.2 Implement `apps/client/app/(tabs)/dashboard.tsx` overview screen
     - Display summary of current month expenses vs monthly limit (if shared budget active)
     - Quick-add expense button; navigation to metrics, loans, shared-budget tabs
     - Use palette colors and `44×44` touch targets throughout (Req 8.1, 8.2)
     - _Requirements: 8.1, 8.2, 8.4_
 
-  - [ ] 22.3 Write Playwright E2E tests for Web (critical flows)
+  - [~] 22.3 Write Playwright E2E tests for Web (critical flows)
     - Test: registration → onboarding → dashboard navigation renders correctly
     - Test: add expense → metrics filter shows correct total
     - Test: shared budget invite → accept → both members see the same budget
     - _Requirements: 1, 5, 6_
 
-  - [ ] 22.4 Write Detox E2E test for Android (smoke tests)
+  - [~] 22.4 Write Detox E2E test for Android (smoke tests)
     - Test: app launch → registration screen rendered; login flow; notification permission prompt
     - _Requirements: 8.4_
 
-- [ ] 23. Final checkpoint — all tests pass
+- [~] 23. Final checkpoint — all tests pass
   - Run `cd server && npx jest --runInBand` (unit + property + integration)
   - Run `cd apps/client && npx jest --runInBand` (unit + component + property)
   - Run `cd e2e && npx playwright test` (Web E2E)
