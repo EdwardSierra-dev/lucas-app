@@ -251,7 +251,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 10. Expense records module — backend and frontend
+- [x] 10. Expense records module — backend and frontend
   - [x] 10.1 Create `expense_records` database migration and `ExpenseRecord` TypeORM entity
     - Columns and indexes per schema: `(user_id, expense_date)` composite index, `category_id` index
     - Enforce `amount` NUMERIC(14,2) CHECK > 0 AND ≤ 999_999_999.99, `description` VARCHAR(255)
@@ -268,7 +268,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - **Validates: Requirements 5.1, 5.6, 5.7, 5.8**
     - Use `fc.float()` and `fc.string()` arbitraries spanning valid and invalid ranges
 
-  - [~] 10.4 Implement expense record UI components and screens in `apps/client`
+  - [x] 10.4 Implement expense record UI components and screens in `apps/client`
     - `MoneyInput.tsx` — already scaffolded in task 2.2; wire to expense record form
     - Add expense record form accessible from dashboard: category selector, amount (`MoneyInput`), description (max 255 chars), date picker
     - Display validation errors inline for amount and description
