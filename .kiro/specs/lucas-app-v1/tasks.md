@@ -165,7 +165,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 7. Onboarding flow — mandatory and non-mandatory expenses
+- [x] 7. Onboarding flow — mandatory and non-mandatory expenses
   - [x] 7.1 Create `user_expenses` database migration and `UserExpense` TypeORM entity
     - Columns: `id`, `user_id`, `category_id`, `payment_day` SMALLINT CHECK 1–28, `is_active`, `created_at`, `updated_at`
     - Unique constraint `(user_id, category_id)`
@@ -207,7 +207,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Hooks: `useCategories`, `useConfigureExpense`, `useUpdatePaymentDay`, `useDeleteExpenseSlot`
     - _Requirements: 2, 3_
 
-  - [~] 7.7 Write unit tests for expense configurator screens
+  - [x] 7.7 Write unit tests for expense configurator screens
     - Test: 8 predefined mandatory categories rendered; "+" button opens form; duplicate name shows error; custom category added to list; deselect removes from active list; 3 predefined optional categories rendered; max-20 custom limit enforced
     - _Requirements: 2.2, 2.4, 2.5, 2.6, 2.7, 3.2, 3.3_
 
@@ -218,7 +218,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 9. Vehicle module — backend and frontend
+- [x] 9. Vehicle module — backend and frontend
   - [x] 9.1 Create `vehicles` database migration and `Vehicle` TypeORM entity
     - Columns: `id`, `user_id` UNIQUE, `vehicle_type`, `model`, `purchase_date` DATE, `soat_expiry` DATE, `tecnomecanica_expiry` DATE, `kit_expiry` DATE (nullable), `created_at`, `updated_at`
     - _Requirements: 4.1 – 4.10_
@@ -245,7 +245,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - On success: save record, dismiss modal, advance navigation (Req 4.7)
     - _Requirements: 4.1 – 4.7, 8.1, 8.2_
 
-  - [~] 9.5 Write unit tests for VehicleForm
+  - [x] 9.5 Write unit tests for VehicleForm
     - Test: required field errors on empty submit; purchase date > today rejected; expiry date < purchase date rejected; kit date field absent from validation errors when empty; successful submission dismisses modal
     - _Requirements: 4.3 – 4.7_
 
@@ -361,7 +361,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Show zero total and "no records found" message on empty results (Req 6.8)
     - _Requirements: 6.1 – 6.8, 8.1, 8.2, 8.3_
 
-  - [~] 15.2 Implement chart components
+  - [x] 15.2 Implement chart components
     - `SpendingBarChart.tsx` — bar chart of totals by month using palette colors
     - `CategoryPieChart.tsx` — pie chart of totals by category
     - Wire charts to metrics response data
@@ -377,7 +377,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 16. Loans module — backend and frontend
+- [x] 16. Loans module — backend and frontend
   - [x] 16.1 Create `loans` database migration and `Loan` TypeORM entity
     - Columns per schema with CHECK constraints for bank/person fields
     - `CONSTRAINT bank_loan_fields`, `CONSTRAINT person_loan_fields` as defined in design
@@ -405,7 +405,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - All amounts rendered via `MoneyInput` / `formatMoney` (Req 8.3)
     - _Requirements: 7.1 – 7.9, 8.1, 8.2, 8.3_
 
-  - [~] 16.5 Write unit tests for LoanForm
+  - [x] 16.5 Write unit tests for LoanForm
     - Test: bank path shows only cuota field; person path shows 3 fields; cuota=0 shows error; capital=0 shows error; interest<0 shows error; installments=0 shows error; total repayment formula displayed correctly
     - _Requirements: 7.1 – 7.8_
 
@@ -429,7 +429,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Wire Supabase Realtime channel subscription on client to `notifications` table INSERT for user
     - _Requirements: 5.4, general notification delivery_
 
-  - [~] 18.3 Implement scheduled payment reminder job
+  - [x] 18.3 Implement scheduled payment reminder job
     - `@Cron('50 8 * * *')` — `sendPaymentReminders()`: query `user_expenses` where `payment_day = tomorrow OR payment_day = today`; dispatch push notification per slot (Req 2.9, 3.6)
     - Non-mandatory reminder dispatched at 09:00 local time on payment day (Req 3.6)
     - One-day-away reminder for mandatory expenses (Req 2.9)
