@@ -11,6 +11,7 @@ import { SharedBudgetsModule } from './shared-budgets/shared-budgets.module';
 import { VehiclesModule } from './vehicles/vehicles.module';
 import { ExpensesModule } from './expenses/expenses.module';
 import { CategoriesModule } from './categories/categories.module';
+import { MetricsModule } from './metrics/metrics.module';
 
 @Module({
   imports: [
@@ -37,6 +38,7 @@ import { CategoriesModule } from './categories/categories.module';
     VehiclesModule,
     SharedBudgetsModule,
     LoansModule,
+    MetricsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

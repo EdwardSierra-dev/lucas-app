@@ -121,13 +121,13 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - All interactive elements ≥ 44×44 px (Req 8.2); use only palette colors (Req 8.1)
     - _Requirements: 1.1 – 1.10, 8.1, 8.2_
 
-  - [~] 4.2 Implement login screen `apps/client/app/(auth)/login.tsx`
+  - [x] 4.2 Implement login screen `apps/client/app/(auth)/login.tsx`
     - Email + password fields, submit calls `POST /auth/login`, stores tokens in `authStore`
     - Inline error on invalid credentials (401 response)
     - Axios interceptor for silent token refresh on 401 with valid refresh token
     - _Requirements: 1 (auth flow), design auth section_
 
-  - [~] 4.3 Implement `authStore.ts` (Zustand) and `authApi.ts` (React Query + Axios)
+  - [x] 4.3 Implement `authStore.ts` (Zustand) and `authApi.ts` (React Query + Axios)
     - Store: `accessToken`, `refreshToken`, `user` profile, `clearAuth()` action
     - API hooks: `useRegister`, `useLogin`, `useLogout`, `useRefreshToken`
     - Axios instance with `Authorization: Bearer` interceptor and refresh-on-401 logic
@@ -257,7 +257,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Enforce `amount` NUMERIC(14,2) CHECK > 0 AND ≤ 999_999_999.99, `description` VARCHAR(255)
     - _Requirements: 5.6, 5.7, 5.8_
 
-  - [~] 10.2 Implement expense records endpoints in `ExpensesModule`
+  - [x] 10.2 Implement expense records endpoints in `ExpensesModule`
     - `GET /expenses/records` — list expense records, support query params for filtering (month, category, date range)
     - `POST /expenses/records` — add expense record; validate amount 0.01–999_999_999.99, description ≤ 255 chars
     - `DELETE /expenses/records/:id` — delete record; only owner can delete
@@ -334,7 +334,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 14. Metrics module — backend
-  - [~] 14.1 Implement `MetricsModule` with `POST /metrics/expenses`
+  - [x] 14.1 Implement `MetricsModule` with `POST /metrics/expenses`
     - Accept `MetricsQueryDto`: optional `months[]` (up to 5), `categoryId`, `startDate`, `endDate` (ISO date), `budgetMemberId`
     - Reject filter if `startDate > endDate` with 400 validation error (Req 6.7)
     - Execute filtered query against `expense_records` with all applicable WHERE clauses; use database-level filtering for performance
