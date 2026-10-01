@@ -110,7 +110,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 4. Authentication — frontend
+- [x] 4. Authentication — frontend
   - [x] 4.1 Implement registration screen `apps/client/app/(auth)/register.tsx` and `RegistrationForm.tsx`
     - Email field with `Email_Validator` (Zod `z.string().email()` regex aligned with Req 1.1) — show inline error on blur/submit if invalid (Req 1.2)
     - Password field with `Password_Validator` — enforce min 8 / max 128 chars, 1 uppercase, 1 digit, 1 special char; show per-criterion inline errors (Req 1.3, 1.4)
@@ -133,7 +133,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Axios instance with `Authorization: Bearer` interceptor and refresh-on-401 logic
     - _Requirements: 1, design auth section_
 
-  - [~] 4.4 Write unit tests for RegistrationForm
+  - [x] 4.4 Write unit tests for RegistrationForm
     - Test: success modal shown after registration; 409 shows inline email error; 500 preserves form values; password mismatch error; each password criterion error listed individually
     - _Requirements: 1.2, 1.4, 1.7, 1.9, 1.10_
 
@@ -333,7 +333,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 14. Metrics module — backend
+- [x] 14. Metrics module — backend
   - [x] 14.1 Implement `MetricsModule` with `POST /metrics/expenses`
     - Accept `MetricsQueryDto`: optional `months[]` (up to 5), `categoryId`, `startDate`, `endDate` (ISO date), `budgetMemberId`
     - Reject filter if `startDate > endDate` with 400 validation error (Req 6.7)
@@ -342,7 +342,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Return `totalSum: 0` and empty records array when no matches (Req 6.8)
     - _Requirements: 6.1 – 6.8_
 
-  - [~] 14.2 Write property-based tests for metrics — P15, P16, P17
+  - [x] 14.2 Write property-based tests for metrics — P15, P16, P17
     - **Property 15: Metrics filter returns only matching records**
     - **Property 16: Metrics total sum equals sum of matching records**
     - **Property 17: Metrics rejects date range where start exceeds end**
@@ -390,7 +390,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - `DELETE /loans/:id` — delete loan record
     - _Requirements: 7.1 – 7.9_
 
-  - [~] 16.3 Write property-based tests for loan validation and computation — P18, P19, P20
+  - [x] 16.3 Write property-based tests for loan validation and computation — P18, P19, P20
     - **Property 18: Loan input validation (bank and person)**
     - **Property 19: Person loan total repayment computation = capital + (interest × installments)**
     - **Property 20: Active loan remaining and outstanding amount computation**

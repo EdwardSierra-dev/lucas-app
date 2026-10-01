@@ -27,6 +27,14 @@
     "9.3 Write property-based tests for vehicle date validations — P8, P9": {
       "status": "passed",
       "lastRunTimestamp": 1790825553095
+    },
+    "14.2 Write property-based tests for metrics — P15, P16, P17": {
+      "status": "passed",
+      "lastRunTimestamp": 1790825721661
+    },
+    "16.3 Write property-based tests for loan validation and computation — P18, P19, P20": {
+      "status": "passed",
+      "lastRunTimestamp": 1790825739066
     }
   },
   "executionHistory": {
@@ -428,6 +436,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823406320
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825644381
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825780460
       }
     ],
     "5. Checkpoint — auth layer complete": [
@@ -960,6 +978,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823411126
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825642553
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825778526
       }
     ],
     "15.1 Implement metrics screen `apps/client/app/(tabs)/metrics.tsx`": [
@@ -1064,6 +1092,16 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790823411943
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825643518
+      },
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825779880
       }
     ],
     "16.4 Implement loans screen `apps/client/app/(tabs)/loans.tsx` and `LoanForm.tsx`": [
@@ -1390,6 +1428,20 @@
         "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
         "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
         "timestamp": 1790825600750
+      }
+    ],
+    "14. Metrics module — backend": [
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825778593
+      }
+    ],
+    "4. Authentication — frontend": [
+      {
+        "executionId": "5e94b8d3-a595-4f54-b50b-dd48b542a5af",
+        "chatSessionId": "sess_58a6fcd7-0b5b-40cb-ad67-af6a8e838b97",
+        "timestamp": 1790825780536
       }
     ]
   }
