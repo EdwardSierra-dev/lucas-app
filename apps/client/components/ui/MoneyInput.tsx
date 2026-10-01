@@ -54,9 +54,9 @@ export function MoneyInput({
     // Only allow digits, one dot, and at most 2 decimal places
     const cleaned = text.replace(/[^0-9.]/g, '');
     const parts = cleaned.split('.');
-    let sanitised = parts[0];
+    let sanitised = parts[0] ?? '';
     if (parts.length > 1) {
-      sanitised += '.' + parts[1].slice(0, 2);
+      sanitised += '.' + (parts[1] ?? '').slice(0, 2);
     }
     setRawText(sanitised);
   }, []);

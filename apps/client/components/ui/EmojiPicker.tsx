@@ -80,7 +80,7 @@ export function EmojiPicker({
   maxHeight = 300,
 }: EmojiPickerProps): React.JSX.Element {
   const [expandedGroup, setExpandedGroup] = useState<string | null>(
-    EMOJI_GROUPS[0].label,
+    EMOJI_GROUPS[0]?.label ?? null,
   );
 
   return (

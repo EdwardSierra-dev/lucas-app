@@ -137,7 +137,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Test: success modal shown after registration; 409 shows inline email error; 500 preserves form values; password mismatch error; each password criterion error listed individually
     - _Requirements: 1.2, 1.4, 1.7, 1.9, 1.10_
 
-- [~] 5. Checkpoint — auth layer complete
+- [x] 5. Checkpoint — auth layer complete
   - Ensure all auth backend unit + property tests pass (`cd server && npx jest --runInBand --testPathPattern=auth`)
   - Ensure registration form renders and validates correctly in Expo Web
   - Ask user if any adjustments are needed before proceeding.

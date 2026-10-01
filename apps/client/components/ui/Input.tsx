@@ -78,8 +78,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
     backgroundColor: Colors.background,
-    color: Colors.text,
-    ...Typography.Body,
+    ...Typography.Body, // includes color: Colors.text
   },
   inputError: {
     borderColor: Colors.accent, // Peach on error
