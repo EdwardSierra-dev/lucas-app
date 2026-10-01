@@ -456,7 +456,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 
 ---
 
-- [ ] 19. Notification system — frontend
+- [x] 19. Notification system — frontend
   - [x] 19.1 Register push notification token via Expo Notifications
     - On app startup, call `Notifications.getExpoPushTokenAsync()` and persist token to `PATCH /users/me` (or dedicated endpoint)
     - Request permissions with user-friendly prompt
@@ -468,7 +468,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
     - Display in-app alert for `budget_invitation` type notifications within 30 s (Req 5.4)
     - _Requirements: 5.4_
 
-  - [~] 19.3 Write unit tests for notification frontend integration
+  - [x] 19.3 Write unit tests for notification frontend integration
     - Test: NotificationBadge count increments on new in-app notification; budget limit alert banner shows when limit exceeded; push token registration called on startup
     - _Requirements: 5.4, 5.12_
 
@@ -503,13 +503,13 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 22. E2E and final wiring
-  - [~] 22.1 Wire all onboarding navigation in `apps/client/app/_layout.tsx`
+  - [x] 22.1 Wire all onboarding navigation in `apps/client/app/_layout.tsx`
     - Unauthenticated users → `(auth)/register` or `(auth)/login`
     - Authenticated + `onboarding_done = false` → `(onboarding)/mandatory-expenses` → `(onboarding)/optional-expenses` → conditionally `(onboarding)/vehicle-registration` → set `onboarding_done = true` → `(tabs)/dashboard`
     - Authenticated + `onboarding_done = true` → `(tabs)/dashboard`
     - _Requirements: 2, 3, 4, design navigation section_
 
-  - [~] 22.2 Implement `apps/client/app/(tabs)/dashboard.tsx` overview screen
+  - [x] 22.2 Implement `apps/client/app/(tabs)/dashboard.tsx` overview screen
     - Display summary of current month expenses vs monthly limit (if shared budget active)
     - Quick-add expense button; navigation to metrics, loans, shared-budget tabs
     - Use palette colors and `44×44` touch targets throughout (Req 8.1, 8.2)
