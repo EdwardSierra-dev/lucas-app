@@ -4,6 +4,8 @@ module.exports = {
   testEnvironment: 'node',
   rootDir: '.',
   testMatch: ['**/__tests__/**/*.spec.ts', '**/*.spec.ts', '**/*.test.ts'],
+  // Integration specs (test/integration/) run via jest-integration.config.js only.
+  testPathIgnorePatterns: ['/node_modules/', '/test/integration/'],
   transform: {
     '^.+\\.tsx?$': [
       'ts-jest',

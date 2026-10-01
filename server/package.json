@@ -12,6 +12,7 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
+    "test:integration": "jest --config jest-integration.config.js --runInBand",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
