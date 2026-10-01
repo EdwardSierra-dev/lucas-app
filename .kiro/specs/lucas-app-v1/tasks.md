@@ -111,7 +111,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 4. Authentication — frontend
-  - [~] 4.1 Implement registration screen `apps/client/app/(auth)/register.tsx` and `RegistrationForm.tsx`
+  - [x] 4.1 Implement registration screen `apps/client/app/(auth)/register.tsx` and `RegistrationForm.tsx`
     - Email field with `Email_Validator` (Zod `z.string().email()` regex aligned with Req 1.1) — show inline error on blur/submit if invalid (Req 1.2)
     - Password field with `Password_Validator` — enforce min 8 / max 128 chars, 1 uppercase, 1 digit, 1 special char; show per-criterion inline errors (Req 1.3, 1.4)
     - Password confirmation field — show mismatch error if values differ (Req 1.5, 1.6)
@@ -252,7 +252,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 10. Expense records module — backend and frontend
-  - [~] 10.1 Create `expense_records` database migration and `ExpenseRecord` TypeORM entity
+  - [x] 10.1 Create `expense_records` database migration and `ExpenseRecord` TypeORM entity
     - Columns and indexes per schema: `(user_id, expense_date)` composite index, `category_id` index
     - Enforce `amount` NUMERIC(14,2) CHECK > 0 AND ≤ 999_999_999.99, `description` VARCHAR(255)
     - _Requirements: 5.6, 5.7, 5.8_
@@ -277,7 +277,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 11. Shared budget module — backend
-  - [~] 11.1 Create `shared_budgets`, `budget_members`, `budget_invitations`, `budget_incomes` database migrations and TypeORM entities
+  - [x] 11.1 Create `shared_budgets`, `budget_members`, `budget_invitations`, `budget_incomes` database migrations and TypeORM entities
     - `shared_budgets`: `id`, `name`, `monthly_limit` NUMERIC(14,2), `limit_notified` BOOLEAN DEFAULT false, timestamps
     - `budget_members`: composite PK `(budget_id, user_id)`, `role`, `joined_at`
     - `budget_invitations`: `id`, `budget_id`, `inviter_id`, `invitee_email`, `status` enum, `expires_at`
@@ -378,7 +378,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 16. Loans module — backend and frontend
-  - [~] 16.1 Create `loans` database migration and `Loan` TypeORM entity
+  - [x] 16.1 Create `loans` database migration and `Loan` TypeORM entity
     - Columns per schema with CHECK constraints for bank/person fields
     - `CONSTRAINT bank_loan_fields`, `CONSTRAINT person_loan_fields` as defined in design
     - _Requirements: 7.1 – 7.9_
@@ -417,7 +417,7 @@ Full-stack implementation of the Lucas home finance control app across a React N
 ---
 
 - [ ] 18. Notification system — backend scheduler and event triggers
-  - [~] 18.1 Create `notifications` database migration and `Notification` TypeORM entity
+  - [x] 18.1 Create `notifications` database migration and `Notification` TypeORM entity
     - Columns: `id`, `user_id`, `type` VARCHAR(50), `payload` JSONB, `channel` VARCHAR(20) CHECK ('in_app','push','email'), `read` BOOLEAN, `sent_at`, `created_at`
     - Index: `(user_id, read, created_at DESC)`
     - _Requirements: 2.9, 3.6, 4.8, 4.9, 4.10, 5.4, 5.12_
