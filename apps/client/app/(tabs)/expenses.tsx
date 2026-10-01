@@ -28,7 +28,7 @@ import {
   TextStyle,
   SectionListData,
 } from 'react-native';
-import { Modal, Input } from '../../components/ui';
+import { Modal, DatePicker } from '../../components/ui';
 import { ExpenseRecordForm } from '../../components/forms/ExpenseRecordForm';
 import { Colors, TouchTarget, Typography } from '../../constants/theme';
 import { formatMoney } from '../../utils/money';
@@ -183,30 +183,24 @@ export default function ExpensesScreen(): React.JSX.Element {
 
       {/* Date-range filter -------------------------------------------------- */}
       <View style={styles.filterRow}>
-        <Input
+        <DatePicker
           label="Desde"
           value={fromDate}
-          onChangeText={setFromDate}
+          onChange={setFromDate}
+          clearable
+          placeholder="Fecha desde"
           accessibilityLabel="Fecha desde"
-          accessibilityHint="Formato año-mes-día"
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType="numbers-and-punctuation"
-          maxLength={10}
-          placeholder="AAAA-MM-DD"
+          accessibilityHint="Abre el calendario para filtrar desde una fecha"
           containerStyle={styles.filterField}
         />
-        <Input
+        <DatePicker
           label="Hasta"
           value={toDate}
-          onChangeText={setToDate}
+          onChange={setToDate}
+          clearable
+          placeholder="Fecha hasta"
           accessibilityLabel="Fecha hasta"
-          accessibilityHint="Formato año-mes-día"
-          autoCapitalize="none"
-          autoCorrect={false}
-          keyboardType="numbers-and-punctuation"
-          maxLength={10}
-          placeholder="AAAA-MM-DD"
+          accessibilityHint="Abre el calendario para filtrar hasta una fecha"
           containerStyle={styles.filterField}
         />
       </View>
@@ -270,8 +264,8 @@ const styles = StyleSheet.create({
     ...Typography.H1,
   } as TextStyle,
   addButton: {
-    minWidth: TouchTarget.minWidth,
-    minHeight: TouchTarget.minHeight,
+    width: TouchTarget.minWidth,
+    height: TouchTarget.minHeight,
     borderRadius: 22,
     backgroundColor: Colors.primary,
     alignItems: 'center',
@@ -279,9 +273,12 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   addButtonText: {
     color: Colors.background,
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '600',
-    lineHeight: 28,
+    lineHeight: 32,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    includeFontPadding: false,
   } as TextStyle,
   filterRow: {
     flexDirection: 'row',

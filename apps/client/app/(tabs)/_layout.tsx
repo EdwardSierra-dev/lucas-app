@@ -10,11 +10,12 @@
  * slate text color (Req 8.1). The `dashboard` screen file is owned by task
  * 22.2 and is referenced here by route name only.
  */
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import React from 'react';
 import { Text } from 'react-native';
 
 import { Colors } from '../../constants/theme';
+import { useAuthStore } from '../../store/authStore';
 
 /** Render a tab bar emoji icon, dimmed when the tab is inactive. */
 function tabIcon(emoji: string) {
@@ -24,6 +25,15 @@ function tabIcon(emoji: string) {
 }
 
 export default function TabsLayout() {
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
+  // Gate the entire authenticated area. If the user is not signed in (e.g.
+  // after logout, or navigating Back into the tabs), bounce to the login
+  // screen so protected screens never render without a valid session.
+  if (!isAuthenticated) {
+    return <Redirect href="/(auth)/login" />;
+  }
+
   return (
     <Tabs
       screenOptions={{

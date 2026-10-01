@@ -35,9 +35,10 @@ import {
 } from 'react-native';
 
 import { CategoryBreakdownChart } from '../../components/charts';
-import { Button, NotificationBadge } from '../../components/ui';
+import { Button, NotificationBadge, ProfileMenu } from '../../components/ui';
 import { Colors, TouchTarget, Typography } from '../../constants/theme';
 import { api } from '../../services/api';
+import { useMe } from '../../services/userApi';
 import { useExpenseRecords } from '../../services/expenseRecordApi';
 import { useCategories, useUserExpenses } from '../../services/expensesApi';
 import { useLoans } from '../../services/loanApi';
@@ -151,6 +152,13 @@ const EXPIRY_WINDOW_DAYS = 30;
 export default function DashboardScreen(): React.JSX.Element {
   const router = useRouter();
   const user = useAuthStore((state) => state.user);
+  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+
+  // Hydrate the full profile (real id + display name) once authenticated.
+  // /auth/login only returns tokens, so the store starts with a placeholder
+  // user; this fills it in and keeps the greeting / realtime subscription
+  // working after a cold start from persisted tokens.
+  useMe(isAuthenticated);
 
   const now = useMemo(() => new Date(), []);
   const monthFrom = useMemo(() => firstOfMonth(now), [now]);
@@ -236,7 +244,9 @@ export default function DashboardScreen(): React.JSX.Element {
       .sort((a, b) => a.daysAway - b.daysAway);
   }, [vehicle.data, now]);
 
-  const greetingName = user?.email ?? 'Bienvenido';
+  // Prefer the user's display name; fall back to a friendly default rather
+  // than exposing their raw email in the greeting.
+  const greetingName = user?.displayName?.trim() || 'Bienvenido';
 
   // --- Render --------------------------------------------------------------
 
@@ -246,7 +256,7 @@ export default function DashboardScreen(): React.JSX.Element {
       contentContainerStyle={styles.content}
       testID="dashboard-screen"
     >
-      {/* Header: greeting + unread badge */}
+      {/* Header: greeting + unread badge + profile menu */}
       <View style={styles.header}>
         <View style={styles.greetingWrap}>
           <Text style={styles.greetingHello}>Hola,</Text>
@@ -254,7 +264,10 @@ export default function DashboardScreen(): React.JSX.Element {
             {greetingName}
           </Text>
         </View>
-        <NotificationBadge count={unread.data ?? 0} />
+        <View style={styles.headerActions}>
+          <NotificationBadge count={unread.data ?? 0} />
+          <ProfileMenu />
+        </View>
       </View>
 
       {/* This month's total expenses */}
@@ -422,6 +435,11 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   greetingWrap: {
     flexShrink: 1,
+  } as ViewStyle,
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
   } as ViewStyle,
   greetingHello: {
     ...Typography.Body,

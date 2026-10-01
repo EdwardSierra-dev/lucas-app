@@ -20,6 +20,12 @@ import { createJSONStorage, persist, StateStorage } from 'zustand/middleware';
 export interface AuthUser {
   id: string;
   email: string;
+  /**
+   * Optional display name. Unknown right after login (/auth/login returns only
+   * tokens) until hydrated from GET /users/me, and may be null if the user has
+   * never set one. Used to personalize the dashboard greeting.
+   */
+  displayName?: string | null;
 }
 
 export interface AuthState {

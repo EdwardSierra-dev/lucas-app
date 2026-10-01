@@ -2,8 +2,9 @@
  * ExpenseRecordForm — log a personal expense entry (Requirement 5.x).
  *
  * Fields:
- *   • category   — a horizontal picker of CategoryCards fed by useCategories.
- *                  Exactly one category must be chosen.
+ *   • category   — a searchable Select (dropdown) fed by useCategories, with the
+ *                  category emoji preserved in both the options and the selected
+ *                  state. Exactly one category must be chosen.
  *   • amount     — MoneyInput (0.01–999,999,999.99); `null` means out of range
  *                  or blank, which surfaces an inline validation error.
  *   • description — optional free text, capped at 255 characters.
@@ -18,13 +19,13 @@ import React, { useMemo, useState } from 'react';
 import {
   View,
   Text,
-  ScrollView,
   ActivityIndicator,
   StyleSheet,
   ViewStyle,
   TextStyle,
 } from 'react-native';
-import { Button, Input, MoneyInput, CategoryCard } from '../ui';
+import { Button, Input, MoneyInput, Select, DatePicker } from '../ui';
+import type { SelectOption } from '../ui';
 import { Colors, Typography } from '../../constants/theme';
 import { useCategories } from '../../services/expensesApi';
 import type { CreateExpenseRecordPayload } from '../../services/expenseRecordApi';
@@ -71,6 +72,18 @@ export function ExpenseRecordForm({
     [categoriesQuery.data],
   );
 
+  // Map categories to Select options, preserving each category's emoji so it
+  // shows in both the dropdown list and the selected trigger state.
+  const categoryOptions = useMemo<SelectOption[]>(
+    () =>
+      categories.map((category) => ({
+        value: category.id,
+        label: category.name,
+        emoji: category.emoji,
+      })),
+    [categories],
+  );
+
   const handleSubmit = (): void => {
     const nextErrors: FieldErrors = {};
 
@@ -112,57 +125,52 @@ export function ExpenseRecordForm({
 
   return (
     <View style={styles.container}>
-      <Text style={styles.sectionLabel}>Categoría</Text>
       {categoriesQuery.isLoading ? (
-        <ActivityIndicator
-          color={Colors.primary}
-          accessibilityLabel="Cargando categorías"
-          style={styles.loader}
-        />
+        <>
+          <Text style={styles.sectionLabel}>Categoría</Text>
+          <ActivityIndicator
+            color={Colors.primary}
+            accessibilityLabel="Cargando categorías"
+            style={styles.loader}
+          />
+        </>
       ) : categoriesQuery.isError ? (
-        <Text style={styles.errorText}>
-          No se pudieron cargar las categorías.
-        </Text>
+        <>
+          <Text style={styles.sectionLabel}>Categoría</Text>
+          <Text style={styles.errorText}>
+            No se pudieron cargar las categorías.
+          </Text>
+        </>
       ) : categories.length > 0 ? (
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.categoryRow}
-          keyboardShouldPersistTaps="handled"
-        >
-          {categories.map((category) => (
-            <View key={category.id} style={styles.categoryItem}>
-              <CategoryCard
-                name={category.name}
-                emoji={category.emoji}
-                selected={categoryId === category.id}
-                onToggle={() =>
-                  setCategoryId((current) =>
-                    current === category.id ? '' : category.id,
-                  )
-                }
-              />
-            </View>
-          ))}
-        </ScrollView>
+        <Select
+          label="Categoría"
+          value={categoryId === '' ? null : categoryId}
+          options={categoryOptions}
+          onChange={setCategoryId}
+          placeholder="Selecciona una categoría"
+          searchPlaceholder="Buscar categoría..."
+          error={errors.categoryId}
+          accessibilityLabel="Categoría del gasto"
+          accessibilityHint="Abre la lista de categorías para buscar y seleccionar"
+        />
       ) : (
-        <Text style={styles.caption}>
-          No hay categorías disponibles todavía.
-        </Text>
+        <>
+          <Text style={styles.sectionLabel}>Categoría</Text>
+          <Text style={styles.caption}>
+            No hay categorías disponibles todavía.
+          </Text>
+        </>
       )}
-      {errors.categoryId ? (
-        <Text style={styles.errorText} accessibilityRole="alert">
-          {errors.categoryId}
-        </Text>
-      ) : null}
 
-      <MoneyInput
-        label="Monto"
-        value={amount}
-        onChangeValue={setAmount}
-        error={errors.amount}
-        accessibilityLabel="Monto del gasto"
-      />
+      <View style={styles.field}>
+        <MoneyInput
+          label="Monto"
+          value={amount}
+          onChangeValue={setAmount}
+          error={errors.amount}
+          accessibilityLabel="Monto del gasto"
+        />
+      </View>
 
       <Input
         label="Descripción (opcional)"
@@ -175,18 +183,13 @@ export function ExpenseRecordForm({
         containerStyle={styles.field}
       />
 
-      <Input
-        label="Fecha (AAAA-MM-DD)"
+      <DatePicker
+        label="Fecha"
         value={expenseDate}
-        onChangeText={setExpenseDate}
+        onChange={setExpenseDate}
         error={errors.expenseDate}
         accessibilityLabel="Fecha del gasto"
-        accessibilityHint="Formato año-mes-día, por ejemplo 2024-05-31"
-        autoCapitalize="none"
-        autoCorrect={false}
-        keyboardType="numbers-and-punctuation"
-        maxLength={10}
-        placeholder="AAAA-MM-DD"
+        accessibilityHint="Abre el calendario para elegir la fecha del gasto"
         containerStyle={styles.field}
       />
 
@@ -211,13 +214,6 @@ const styles = StyleSheet.create({
     ...Typography.Body,
     marginBottom: 4,
   } as TextStyle,
-  categoryRow: {
-    gap: 8,
-    paddingVertical: 4,
-  } as ViewStyle,
-  categoryItem: {
-    minWidth: 140,
-  } as ViewStyle,
   loader: {
     marginVertical: 12,
   } as ViewStyle,

@@ -73,6 +73,50 @@ describe('Modal — skippable variant (P22)', () => {
     expect(flattened.minHeight).toBe(TouchTarget.minHeight);
   });
 
+  it('renders an "X" close button for standard (non-skippable) modals', () => {
+    render(
+      <Modal visible onClose={jest.fn()}>
+        <Text>Contenido</Text>
+      </Modal>
+    );
+
+    expect(screen.getByLabelText('Cerrar')).toBeTruthy();
+  });
+
+  it('calls onClose when the "X" close button is pressed', () => {
+    const onClose = jest.fn();
+    render(
+      <Modal visible onClose={onClose}>
+        <Text>Contenido</Text>
+      </Modal>
+    );
+
+    fireEvent.press(screen.getByLabelText('Cerrar'));
+
+    expect(onClose).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not render the "X" close button when closable is false', () => {
+    render(
+      <Modal visible closable={false} onClose={jest.fn()}>
+        <Text>Contenido</Text>
+      </Modal>
+    );
+
+    expect(screen.queryByLabelText('Cerrar')).toBeNull();
+  });
+
+  it('shows "Omitir" instead of "X" for skippable modals', () => {
+    render(
+      <Modal visible skippable onClose={jest.fn()}>
+        <Text>Contenido</Text>
+      </Modal>
+    );
+
+    expect(screen.getByLabelText('Omitir')).toBeTruthy();
+    expect(screen.queryByLabelText('Cerrar')).toBeNull();
+  });
+
   it('renders children when the modal is visible', () => {
     render(
       <Modal visible onClose={jest.fn()}>

@@ -1,5 +1,10 @@
 /**
- * Modal — standard and skippable variants.
+ * Modal — standard, closable, and skippable variants.
+ *
+ * Closable variant (default for non-skippable modals) renders an "X" button in
+ * the top-right corner so users can dismiss the modal without completing the
+ * flow. The X calls `onClose`, which the parent uses to flip its visibility
+ * state.
  *
  * Skippable variant renders an "Omitir" button in the top-right corner
  * with a minimum 44×44 touch target (Req 8.5).
@@ -22,7 +27,16 @@ import { Colors, TouchTarget } from '../../constants/theme';
 export interface ModalProps {
   visible: boolean;
   onClose: () => void;
+  /**
+   * When true, renders the "Omitir" (skip) button instead of the "X" close
+   * button. Used by onboarding flows (Req 8.5).
+   */
   skippable?: boolean;
+  /**
+   * Whether to show the top-right "X" close button. Defaults to true for
+   * non-skippable modals and is ignored when `skippable` is true.
+   */
+  closable?: boolean;
   children: React.ReactNode;
 }
 
@@ -30,8 +44,13 @@ export function Modal({
   visible,
   onClose,
   skippable = false,
+  closable = true,
   children,
 }: ModalProps): React.JSX.Element {
+  // Skippable takes precedence; otherwise show the X when closable.
+  const showClose = !skippable && closable;
+  const hasTopAction = skippable || showClose;
+
   return (
     <RNModal
       visible={visible}
@@ -49,13 +68,26 @@ export function Modal({
               accessibilityLabel="Omitir"
               accessibilityRole="button"
               accessibilityHint="Cierra este modal sin completar el flujo"
-              style={styles.omitirButton}
+              style={styles.topRightButton}
             >
               <Text style={styles.omitirText}>Omitir</Text>
             </TouchableOpacity>
           )}
 
-          <View style={skippable ? styles.contentWithSkip : styles.content}>
+          {/* Top-right X close button for standard modals */}
+          {showClose && (
+            <TouchableOpacity
+              onPress={onClose}
+              accessibilityLabel="Cerrar"
+              accessibilityRole="button"
+              accessibilityHint="Cierra este modal sin guardar"
+              style={styles.topRightButton}
+            >
+              <Text style={styles.closeText}>✕</Text>
+            </TouchableOpacity>
+          )}
+
+          <View style={hasTopAction ? styles.contentWithTopAction : styles.content}>
             {children}
           </View>
         </View>
@@ -78,7 +110,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     overflow: 'hidden',
   } as ViewStyle,
-  omitirButton: {
+  topRightButton: {
     position: 'absolute',
     top: 0,
     right: 0,
@@ -94,11 +126,19 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
   } as TextStyle,
+  closeText: {
+    color: Colors.text,
+    fontSize: 20,
+    fontWeight: '700',
+    lineHeight: 24,
+    includeFontPadding: false,
+    textAlignVertical: 'center',
+  } as TextStyle,
   content: {
     padding: 24,
   } as ViewStyle,
-  contentWithSkip: {
+  contentWithTopAction: {
     padding: 24,
-    paddingTop: 52, // make room for the Omitir button
+    paddingTop: 52, // make room for the top-right action button
   } as ViewStyle,
 });

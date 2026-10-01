@@ -28,6 +28,41 @@ function setMoneyInput(
   fireEvent(input, 'blur');
 }
 
+/**
+ * Picks a date on a DatePicker trigger. Opens the calendar via the trigger's
+ * accessibility label, navigates from the currently shown month to the target
+ * month, then taps the day cell (each cell is labeled with its ISO date).
+ *
+ * @param triggerLabel accessibility label of the DatePicker trigger
+ * @param iso          target date as YYYY-MM-DD
+ */
+function pickDate(
+  getByLabelText: (label: string) => any,
+  triggerLabel: string,
+  iso: string,
+): void {
+  const parts = iso.split('-').map(Number);
+  const year = parts[0] ?? 0;
+  const month = parts[1] ?? 1;
+
+  // Open the calendar.
+  fireEvent.press(getByLabelText(triggerLabel));
+
+  // The calendar opens on today's month; walk forward/back to the target.
+  // "Mes anterior" / "Mes siguiente" step one month at a time.
+  const now = new Date();
+  const currentIndex = now.getFullYear() * 12 + now.getMonth();
+  const targetIndex = year * 12 + (month - 1);
+  const delta = targetIndex - currentIndex;
+  const navLabel = delta >= 0 ? 'Mes siguiente' : 'Mes anterior';
+  for (let i = 0; i < Math.abs(delta); i += 1) {
+    fireEvent.press(getByLabelText(navLabel));
+  }
+
+  // Tap the day cell. The day label is unique within the shown month.
+  fireEvent.press(getByLabelText(iso));
+}
+
 describe('LoanForm', () => {
   it('shows only the source selector before a source is chosen', () => {
     const onSubmit = jest.fn();
@@ -74,10 +109,7 @@ describe('LoanForm', () => {
     fireEvent.press(getByLabelText('Banco'));
     // Provide valid plazo + startDate so the only failing field is the cuota.
     fireEvent.changeText(getByLabelText('Número total de cuotas'), '12');
-    fireEvent.changeText(
-      getByLabelText('Fecha de inicio del préstamo'),
-      '2024-05-14',
-    );
+    pickDate(getByLabelText, 'Fecha de inicio del préstamo', '2024-05-14');
 
     fireEvent.press(getByLabelText('Guardar préstamo'));
 
@@ -93,10 +125,7 @@ describe('LoanForm', () => {
 
     fireEvent.press(getByLabelText('Persona'));
     fireEvent.changeText(getByLabelText('Número total de cuotas'), '6');
-    fireEvent.changeText(
-      getByLabelText('Fecha de inicio del préstamo'),
-      '2024-05-14',
-    );
+    pickDate(getByLabelText, 'Fecha de inicio del préstamo', '2024-05-14');
     // Supply interest so capital is the failing field we assert on.
     setMoneyInput(getByLabelText, 'Interés por cuota', '50');
 
@@ -113,10 +142,7 @@ describe('LoanForm', () => {
     fireEvent.press(getByLabelText('Banco'));
     setMoneyInput(getByLabelText, 'Valor de la cuota', '150000');
     fireEvent.changeText(getByLabelText('Número total de cuotas'), '12');
-    fireEvent.changeText(
-      getByLabelText('Fecha de inicio del préstamo'),
-      '2024-05-14',
-    );
+    pickDate(getByLabelText, 'Fecha de inicio del préstamo', '2024-05-14');
 
     fireEvent.press(getByLabelText('Guardar préstamo'));
 
@@ -138,10 +164,7 @@ describe('LoanForm', () => {
     setMoneyInput(getByLabelText, 'Capital del préstamo', '1000000');
     setMoneyInput(getByLabelText, 'Interés por cuota', '20000');
     fireEvent.changeText(getByLabelText('Número total de cuotas'), '10');
-    fireEvent.changeText(
-      getByLabelText('Fecha de inicio del préstamo'),
-      '2024-05-14',
-    );
+    pickDate(getByLabelText, 'Fecha de inicio del préstamo', '2024-05-14');
 
     fireEvent.press(getByLabelText('Guardar préstamo'));
 
@@ -155,3 +178,4 @@ describe('LoanForm', () => {
     expect(payload.installmentAmount).toBeUndefined();
   });
 });
+

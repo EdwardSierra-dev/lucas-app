@@ -22,3 +22,11 @@ export type { EmojiPickerProps } from './EmojiPicker';
 
 export { CategoryCard } from './CategoryCard';
 export type { CategoryCardProps } from './CategoryCard';
+
+export { Select } from './Select';
+export type { SelectProps, SelectOption } from './Select';
+
+export { DatePicker } from './DatePicker';
+export type { DatePickerProps } from './DatePicker';
+
+export { ProfileMenu } from './ProfileMenu';

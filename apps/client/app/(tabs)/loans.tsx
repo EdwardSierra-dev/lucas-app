@@ -198,8 +198,8 @@ const styles = StyleSheet.create({
     ...Typography.H1,
   } as TextStyle,
   addButton: {
-    minWidth: TouchTarget.minWidth,
-    minHeight: TouchTarget.minHeight,
+    width: TouchTarget.minWidth,
+    height: TouchTarget.minHeight,
     borderRadius: 22,
     backgroundColor: Colors.primary,
     alignItems: 'center',
@@ -207,9 +207,12 @@ const styles = StyleSheet.create({
   } as ViewStyle,
   addButtonText: {
     color: Colors.background,
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '600',
-    lineHeight: 28,
+    lineHeight: 32,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    includeFontPadding: false,
   } as TextStyle,
   listContent: {
     paddingBottom: 24,

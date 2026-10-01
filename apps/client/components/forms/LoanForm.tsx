@@ -26,7 +26,7 @@ import {
   ViewStyle,
   TextStyle,
 } from 'react-native';
-import { Button, Input, MoneyInput } from '../ui';
+import { Button, Input, MoneyInput, DatePicker } from '../ui';
 import { Colors, TouchTarget, Typography } from '../../constants/theme';
 import { formatMoney } from '../../utils/money';
 import {
@@ -51,8 +51,6 @@ interface FieldErrors {
   description?: string;
   startDate?: string;
 }
-
-const DATE_PLACEHOLDER = 'AAAA-MM-DD';
 
 /** Parses an integer text field into a number, or null when blank/invalid. */
 function parseIntOrNull(text: string): number | null {
@@ -253,17 +251,13 @@ export function LoanForm({
             containerStyle={styles.field}
           />
 
-          <Input
+          <DatePicker
             label="Fecha de inicio"
             value={startDate}
-            onChangeText={setStartDate}
+            onChange={setStartDate}
             error={errors.startDate}
             accessibilityLabel="Fecha de inicio del préstamo"
-            accessibilityHint="Formato año-mes-día, por ejemplo 2024-05-14"
-            placeholder={DATE_PLACEHOLDER}
-            autoCapitalize="none"
-            autoCorrect={false}
-            keyboardType="numbers-and-punctuation"
+            accessibilityHint="Abre el calendario para elegir la fecha de inicio"
             containerStyle={styles.field}
           />
 
